@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>WindowsGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/John/Documents/Visual Studio 2015/Projects/Game4/Game4/Content/images/exit.gif</File>
+    <File>C:/Users/John/Documents/Visual Studio 2015/Projects/Game4/Game4/Content/images/hero.png</File>
+    <File>C:/Users/John/Documents/Visual Studio 2015/Projects/Game4/Game4/Content/images/options.gif</File>
+    <File>C:/Users/John/Documents/Visual Studio 2015/Projects/Game4/Game4/Content/images/play.gif</File>
+    <File>C:/Users/John/Documents/Visual Studio 2015/Projects/Game4/Game4/Content/songs/menu.mp3</File>
+  </SourceFiles>
+</SourceFileCollection>
