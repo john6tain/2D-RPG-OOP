@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Game4
+namespace Game4.Engine
 {
     /// <summary>
     /// This is the main type for your game.
@@ -73,8 +73,8 @@ namespace Game4
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            one.Moveing(PlayerIndex.One,new Keys[] {Keys.A, Keys.D,Keys.W,Keys.S});
-           two.Moveing(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down });
+            one.Moving(PlayerIndex.One,new Keys[] {Keys.A, Keys.D,Keys.W,Keys.S});
+           two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down });
 
             base.Update(gameTime);
         }

@@ -6,7 +6,7 @@ namespace Game4
     /// <summary>
     /// The main class.
     /// </summary>
-    public static class Program
+    public static class MainClass
     {
         /// <summary>
         /// The main entry point for the application.
