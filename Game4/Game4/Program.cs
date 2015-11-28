@@ -6,7 +6,7 @@ namespace Game4
     /// <summary>
     /// The main class.
     /// </summary>
-    public static class MainClass
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -14,8 +14,8 @@ namespace Game4
         [STAThread]
         static void Main()
         {
-            using (var  game = new Menu())
-                    game.Run();
+            using (var game = new Menu())
+                game.Run();
         }
     }
 #endif

@@ -6,28 +6,39 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game4.PlayersAndClasses
 {
-   public class Item
+    public class Item
     {
-        private Texture2D itePic;
+        #region Fields
+
+        private Texture2D itemPick;
         private string name;
         private int value;
 
-       public Item(Texture2D itePic, string name, int value)
-       {
-           this.ItePic = itePic;
-           this.Name = name;
-           this.Value = value;
-       }
+        #endregion
 
-       public Texture2D ItePic
-       {
-           get { return this.itePic; }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public Item(Texture2D itemPick, string name, int value)
+        {
+            this.ItemPick = itemPick;
+            this.Name = name;
+            this.Value = value;
+        }
 
-           set { this.itePic = value; }
-           
-       }
+        #region Properties
+        /// <summary>
+        /// Properties
+        /// </summary>
+        public Texture2D ItemPick
+        {
+            get { return this.itemPick; }
 
-       public string Name
+            set { this.itemPick = value; }
+
+        }
+
+        public string Name
         {
             get { return this.name; }
 
@@ -35,13 +46,13 @@ namespace Game4.PlayersAndClasses
 
         }
 
-       public int Value  
+        public int Value
         {
             get { return this.value; }
 
             set { this.value = value; } //TODO: tva e malko 6it kazavo da se fixne
 
         }
-
+        #endregion
     }
 }

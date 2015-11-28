@@ -9,17 +9,31 @@ namespace Game4.Players
 {
     public class Ability
     {
+        #region Fields
+
         /// <summary>
         /// FIELDS Ability
         /// </summary>
         protected string abilityName;
         protected int abilityValue;
+
+        #endregion
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="abilityName"></param>
+        /// <param name="abilityValue"></param>
         public Ability(string abilityName, int abilityValue)
         {
             this.AbilityName = abilityName;
             this.AbilityValue = abilityValue;
         }
 
+        #region Properties
+        /// <summary>
+        /// Properties
+        /// </summary>
         public int AbilityValue
         {
             get { return this.abilityValue; }
@@ -33,8 +47,14 @@ namespace Game4.Players
             set { this.abilityName = value; }
 
         }
+        #endregion
 
-        public  void AddItem(Item item)
+
+        /// <summary>
+        /// Add Item Method
+        /// </summary>
+        /// <param name="item"></param>
+        public void AddItem(Item item)
         {
             this.abilityValue += item.Value;
         }
