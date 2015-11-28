@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game4.Players;
+using Microsoft.Win32;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,6 +16,8 @@ namespace Game4
         private int y;
         private Texture2D pic;
         protected double life;
+        protected Ability myAbility;
+
         #endregion
 
         #region Properties
@@ -101,4 +105,5 @@ namespace Game4
         #endregion
     }
 
+   
 }
