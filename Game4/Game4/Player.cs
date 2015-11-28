@@ -13,6 +13,7 @@ namespace Game4
         private int x;
         private int y;
        private Texture2D pic;
+        protected double life;
 
         public void Moveing(PlayerIndex playerIndex,Keys[] keyses)
         {
@@ -42,8 +43,20 @@ namespace Game4
         {
             this.X = x;
             this.Y = y;
+            this.Life = 1000;
         }
+        public double Life
+        {
+            get
+            {
+                return x;
+            }
 
+            set
+            {
+                this.life = value;
+            }
+        }
         public int X
         {
             get
