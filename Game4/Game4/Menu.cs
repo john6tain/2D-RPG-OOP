@@ -154,7 +154,7 @@ namespace Game4
                     mousePosition)))
             {
                 player.controls.stop();
-                using (Game1 game = new Game1())
+                using (RPG game = new RPG())
                 {
                     game.Run();
                 }

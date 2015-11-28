@@ -1,0 +1,15 @@
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\exit.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\hero.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\options.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\play.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.m4a
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Game4.exe
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Game4.pdb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csprojResolveAssemblyReference.cache
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csproj.ResolveComReference.cache
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Game4.exe
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Game4.pdb

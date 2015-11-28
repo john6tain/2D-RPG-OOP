@@ -10,7 +10,7 @@ namespace Game4
     /// </summary>
     /// 
    
-    public class Game1 : Game
+    public class RPG : Game
     {
       
         GraphicsDeviceManager graphics;
@@ -18,7 +18,7 @@ namespace Game4
 
         Player one = new Player(0, 0);
         Player two = new Player(500, 0);
-        public Game1()
+        public RPG()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

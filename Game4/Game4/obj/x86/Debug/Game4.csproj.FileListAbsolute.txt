@@ -13,3 +13,7 @@ C:\Users\John\documents\visual studio 2015\Projects\Game4\Game4\bin\WindowsGL\De
 C:\Users\John\documents\visual studio 2015\Projects\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.xnb
 C:\Users\John\documents\visual studio 2015\Projects\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
 C:\Users\John\documents\visual studio 2015\Projects\Game4\Game4\obj\x86\Debug\Game4.csproj.ResolveComReference.cache
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Game4.csproj.ResolveComReference.cache
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Game4.exe
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Game4.pdb
