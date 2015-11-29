@@ -1,4 +1,5 @@
 ﻿using System;
+using Game4.PlayersAndClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -16,8 +17,8 @@ namespace Game4.Engine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Player one = new Player(0, 0);
-        Player two = new Player(500, 0);
+        Player one = new Alexsination(0, 0);
+        Player two = new Alexsination(500, 0);
         public RPG()
         {
             graphics = new GraphicsDeviceManager(this);

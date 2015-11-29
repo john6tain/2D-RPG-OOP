@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game4
 {
-    public abstract class Player
+    public class Player
     {
         #region Fields
         /// <summary>

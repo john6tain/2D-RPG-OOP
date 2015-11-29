@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game4.PlayersAndClasses
 {
-    public abstract class Item
+    public class Item
     {
         #region Fields
 

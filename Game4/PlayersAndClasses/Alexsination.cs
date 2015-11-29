@@ -13,14 +13,9 @@ namespace Game4.PlayersAndClasses
     public class Alexsination : Player
     {
         #region Constructor
-
         /// <summary>
         /// Constructor
         /// </summary>
-        public Alexsination(int x, int y) : base(x, y)
-        {
-            
-        }
         public Alexsination(int x, int y, Texture2D pic, double life, Ability teleport, int energy)
            : base(x, y)
         {
