@@ -12,32 +12,18 @@ namespace Game4
         /// <summary>
         /// FIELDS
         /// </summary>
-        private int x;
-        private int y;
-        private Texture2D pic;
+        protected int x;
+        protected int y;
+        protected Texture2D pic;
         protected double life;
         protected Ability myAbility;
-
+        //TODO :  class weapan
         #endregion
 
         #region Properties
         /// <summary>
         /// Properties
         /// </summary>
-        public Texture2D Pic
-        {
-            get { return this.pic; }
-            set { this.pic = value; }
-        }
-        public double Life
-        {
-            get { return this.x; }
-
-            set
-            {
-                this.life = value;
-            }
-        }
         public int X
         {
             get
@@ -63,6 +49,23 @@ namespace Game4
                 y = value;
             }
         }
+        public Texture2D Pic
+        {
+            get { return this.Pic; }
+            set { this.Pic = value; }
+        }
+
+        public double Life
+        {
+            get { return this.life; }
+            set { this.life = value; }
+        }
+
+        public Ability MyAbility
+        {
+            get { return this.myAbility; }
+            set { this.myAbility = value; }
+        }
         #endregion
 
         /// <summary>
@@ -76,7 +79,14 @@ namespace Game4
             this.Y = y;
             this.Life = 1000;
         }
-
+    	 public Player(int x, int y, Texture2D pic,double life,Ability myAbility)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Life = 1000;
+            this.Pic = pic;
+	        this.MyAbility = myAbility;
+        }
         #region Moving Method
         /// <summary>
         /// Method Moving

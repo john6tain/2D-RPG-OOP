@@ -44,6 +44,8 @@
     <Compile Include="PlayersAndClasses\Alexsination.cs" />
     <Compile Include="PlayersAndClasses\Item.cs" />
     <Compile Include="PlayersAndClasses\Player.cs" />
+    <Compile Include="PlayersAndClasses\Programmer.cs" />
+    <Compile Include="PlayersAndClasses\Trinket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameMenu\Options.cs" />
