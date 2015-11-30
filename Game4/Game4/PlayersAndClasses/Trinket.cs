@@ -6,19 +6,45 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game4.PlayersAndClasses
 {
+    /// <summary>
+    /// John made this class
+    /// #Trinket
+    /// #
+    /// </summary>
     public abstract class Trinket
     {
+        #region Fields
+        /// <summary>
+        /// Props
+        /// </summary>
+        #endregion
         private Texture2D pic;
         private string name;
         private string bonus;
+        private int percent;
+        #region Constructor
 
-        protected Trinket(Texture2D pic, string name, string bonus)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        protected Trinket(Texture2D pic, string name, string bonus, int percent)
         {
             this.Pic = pic;
             this.Name = name;
             this.Bonus = bonus;
+            this.Percent = percent;
         }
+        #endregion
+        #region Constructor
 
+        /// <summary>
+        /// Proparties
+        /// </summary>
+        public int Percent
+        {
+            get { return this.Percent; }
+            set { this.Percent = value; }
+        }
         public string Bonus
         {
             get {return this.Bonus; }
@@ -34,5 +60,6 @@ namespace Game4.PlayersAndClasses
             get { return this.pic; }
             set { this.pic = value; }
         }
+        #endregion
     }
 }

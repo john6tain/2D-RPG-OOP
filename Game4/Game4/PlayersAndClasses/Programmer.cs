@@ -12,8 +12,12 @@ namespace Game4.PlayersAndClasses
 {
     public class Programmer : Player
     {
-		private int caffeine;
-      
+        #region Fields
+        /// <summary>
+        /// Fields
+        /// </summary>
+        private int caffeine;
+        #endregion
         #region Constructor
 
         /// <summary>
@@ -23,16 +27,16 @@ namespace Game4.PlayersAndClasses
         {
             
         }
-        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDors, int energy)
+        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDors, int caffeine)
            : base(x, y, pic,life,hackingDors)
         {
-            this.caffeine = 100;
+            this.Caffeine = caffeine;
         }
         #endregion
 
         #region Fields
         /// <summary>
-        /// Fields
+        /// Proparties
         /// </summary>
         public int Caffeine
         {
