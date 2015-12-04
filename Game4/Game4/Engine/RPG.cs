@@ -19,13 +19,13 @@ namespace Game4.Engine
         private ScrollingBackground myBackground;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        public string a;
         Player one = new Alexsination(0, 0);
         Player two = new Alexsination(500, 0);
         public RPG()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+             a =Content.RootDirectory = "Content";
 
             // Set device frame rate to 30 fps.
               TargetElapsedTime = TimeSpan.FromSeconds(1 / 60.0);
@@ -58,10 +58,14 @@ namespace Game4.Engine
             spriteBatch = new SpriteBatch(GraphicsDevice);
             myBackground = new ScrollingBackground();
          Texture2D background = Content.Load<Texture2D>("images/firstmap");
+            string[] imageNames = {"images/up", "images/down", "images/left","images/pr" };
           myBackground.Load(GraphicsDevice, background);
-
-            one.Pic = Content.Load<Texture2D>("images/pr");
-            two.Pic = Content.Load<Texture2D>("images/hero");
+            for (int i = 0; i < 4; i++)
+            {
+                one.Pics[i] = Content.Load<Texture2D>(imageNames[i]);
+                two.Pics[i] = Content.Load<Texture2D>(imageNames[i]);
+            }
+           
             // TODO: use this.Content to load your game content here
         }
 
@@ -85,8 +89,8 @@ namespace Game4.Engine
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground,this.graphics);
-            two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down },ref  myBackground,this.graphics);
+            one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground,this.graphics,a);
+            two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down },ref  myBackground,this.graphics,a);
           one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             sourceRect = new Rectangle(31 * one.Frame, 0, 31, 52);
            
@@ -106,8 +110,37 @@ namespace Game4.Engine
             GraphicsDevice.Clear(Color.Wheat);
             spriteBatch.Begin();
             myBackground.Draw(spriteBatch);
-            spriteBatch.Draw(one.Pic, new Rectangle(one.X, one.Y, 60, 60),sourceRect, Color.White);
-            spriteBatch.Draw(two.Pic, new Rectangle(two.X, two.Y, 100, 100), Color.White);
+            switch (one.Pos)
+            {
+                case "up":
+                    spriteBatch.Draw(one.Pics[0], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+                case "down":
+                    spriteBatch.Draw(one.Pics[1], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+                case "left":
+                    spriteBatch.Draw(one.Pics[2], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+                case "right":
+                    spriteBatch.Draw(one.Pics[3], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+            }
+            switch (two.Pos)
+            {
+                case "up":
+                    spriteBatch.Draw(two.Pics[0], new Rectangle(two.X, two.Y, 60, 60), Color.White);
+                    break;
+                case "down":
+                    spriteBatch.Draw(two.Pics[1], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+                case "left":
+                    spriteBatch.Draw(two.Pics[2], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+                case "right":
+                    spriteBatch.Draw(two.Pics[3], new Rectangle(one.X, one.Y, 60, 60), sourceRect, Color.White);
+                    break;
+
+            }
            
 
             spriteBatch.End();

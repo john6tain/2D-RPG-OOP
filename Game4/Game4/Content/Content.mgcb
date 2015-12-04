@@ -13,6 +13,23 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin songs/menu.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:songs/menu.mp3
+
+#begin images/down.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:images/down.png
+
 #begin images/exit.gif
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -24,6 +41,17 @@
 /processorParam:TextureFormat=Color
 /build:images/exit.gif
 
+#begin images/firstmap.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:images/firstmap.png
+
 #begin images/hero.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -34,6 +62,17 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:images/hero.png
+
+#begin images/left.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:images/left.png
 
 #begin images/options.gif
 /importer:TextureImporter
@@ -57,11 +96,16 @@
 /processorParam:TextureFormat=Color
 /build:images/play.gif
 
-#begin songs/menu.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:songs/menu.mp3
+#begin images/pr.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:images/pr.png
 
 #begin images/programmer.png
 /importer:TextureImporter
@@ -74,7 +118,7 @@
 /processorParam:TextureFormat=Color
 /build:images/programmer.png
 
-#begin images/pr.png
+#begin images/up.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -83,16 +127,5 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
-/build:images/pr.png
-
-#begin images/firstmap.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:images/firstmap.png
+/build:images/up.png
 

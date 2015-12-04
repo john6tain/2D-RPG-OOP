@@ -21,8 +21,8 @@ namespace Game4.PlayersAndClasses
         {
             
         }
-        public Alexsination(int x, int y, Texture2D pic, double life, Ability teleport, int energy)
-           : base(x, y, pic,1200, teleport)
+        public Alexsination(int x, int y, Texture2D[] pics, double life, Ability teleport, int energy)
+           : base(x, y, pics,1200, teleport)
         {
             this.Energy = 100;
         }

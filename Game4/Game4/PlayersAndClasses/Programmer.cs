@@ -27,8 +27,8 @@ namespace Game4.PlayersAndClasses
         {
             
         }
-        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDors, int caffeine)
-           : base(x, y, pic,life,hackingDors)
+        public Programmer(int x, int y, Texture2D[] pics, double life, Ability hackingDors, int caffeine)
+           : base(x, y, pics,life,hackingDors)
         {
             this.Caffeine = caffeine;
         }

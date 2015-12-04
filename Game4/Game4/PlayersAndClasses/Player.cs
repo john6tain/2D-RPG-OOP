@@ -20,9 +20,10 @@ namespace Game4
         private float elapsed;
         private float delay;
         private int frame;
-        protected Texture2D pic;
+        protected Texture2D[] pic;
         protected double life;
         protected Ability myAbility;
+        private string pos;
         //TODO :  class weapan
         #endregion
 
@@ -55,7 +56,7 @@ namespace Game4
                 y = value;
             }
         }
-        public Texture2D Pic
+        public Texture2D[] Pics
         {
             get { return this.pic; }
             set { this.pic = value; }
@@ -93,6 +94,12 @@ namespace Game4
             set { this.delay = value; }
 
         }
+        public string Pos
+        {
+            get { return this.pos; }
+            set { this.pos = value; }
+
+        }
         #endregion
 
         /// <summary>
@@ -109,17 +116,18 @@ namespace Game4
             this.Frame = 0;
             this.Elapsed = 0;
         }
-    	 public Player(int x, int y, Texture2D pic,double life,Ability myAbility)
+    	 public Player(int x, int y, Texture2D[] pics,double life,Ability myAbility)
         {
             this.X = x;
             this.Y = y;
             this.Life = 1000;
-            this.Pic = pic;
+            this.Pics = pics;
 	        this.MyAbility = myAbility;
     	     this.Delay = 100f;
     	     this.Frame =0;
     	     this.Elapsed = 0;
         }
+
         #region Moving Method
 
         /// <summary>
@@ -128,25 +136,18 @@ namespace Game4
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
         /// <param name="backgroundElapsed"></param>
-        public void Moving(PlayerIndex playerIndex, Keys[] keyses,ref ScrollingBackground background,GraphicsDeviceManager graphics)
+        public void Moving(PlayerIndex playerIndex, Keys[] keyses,ref ScrollingBackground background,GraphicsDeviceManager graphics,string a)
         {
+            
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0]))//left
             {
-
+                
                 if (x>-400)
                 {
                     x -= 2;
-                   
-                        background.Update(2, 0, "x");
-                    
-                   
-
+                    background.Update(2, 0, "x");
                 }
-                
-                    
-                
-                
-              
+                this.Pos = "left";
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1]))//right
             {
@@ -169,7 +170,7 @@ namespace Game4
                     elapsed = 0;
                 }
                 x += 2;
-
+                this.Pos = "right";
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2]))//up
             {
@@ -180,6 +181,7 @@ namespace Game4
                     background.Update(0, 2, "+y");
                 }
                 y -= 2;
+                this.Pos = "up";
 
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3]))//down
@@ -192,7 +194,7 @@ namespace Game4
                     background.Update(0, 2, "-y");
                 }
                 y += 2;
-
+                this.Pos = "down";
             }
         }
         #endregion
