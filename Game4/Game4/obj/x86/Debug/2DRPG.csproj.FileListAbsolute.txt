@@ -28,3 +28,5 @@ C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Game4.
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Game4.pdb
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\MonoGame.Framework.dll
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\pr.xnb

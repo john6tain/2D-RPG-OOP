@@ -14,6 +14,9 @@ namespace Game4
         /// </summary>
         protected int x;
         protected int y;
+        private float elapsed;
+        private float delay;
+        private int frame;
         protected Texture2D pic;
         protected double life;
         protected Ability myAbility;
@@ -51,8 +54,8 @@ namespace Game4
         }
         public Texture2D Pic
         {
-            get { return this.Pic; }
-            set { this.Pic = value; }
+            get { return this.pic; }
+            set { this.pic = value; }
         }
 
         public double Life
@@ -66,6 +69,27 @@ namespace Game4
             get { return this.myAbility; }
             set { this.myAbility = value; }
         }
+
+        public float Elapsed
+        {
+            get { return this.elapsed; }
+            set { this.elapsed = value; }
+
+        }
+
+        public int Frame
+        {
+            get { return this.frame; }
+            set { this.frame = value; }
+
+        }
+
+        public float Delay
+        {
+            get { return this.delay; }
+            set { this.delay = value; }
+
+        }
         #endregion
 
         /// <summary>
@@ -73,11 +97,14 @@ namespace Game4
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Player(int x, int y)
+        public Player(int x, int y )
         {
             this.X = x;
             this.Y = y;
             this.Life = 1000;
+            this.Delay = 100f;
+            this.Frame = 0;
+            this.Elapsed = 0;
         }
     	 public Player(int x, int y, Texture2D pic,double life,Ability myAbility)
         {
@@ -86,6 +113,9 @@ namespace Game4
             this.Life = 1000;
             this.Pic = pic;
 	        this.MyAbility = myAbility;
+    	     this.Delay = 100f;
+    	     this.Frame =0;
+    	     this.Elapsed = 0;
         }
         #region Moving Method
         /// <summary>
@@ -97,19 +127,33 @@ namespace Game4
         {
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0]))//left
             {
-                x -= 10;
+                x -= 5;
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1]))//right
             {
-                x += 10;
+                if (elapsed >= delay)
+                {
+                    if (this.frame >= 1)
+                    {
+                        frame = 0;
+                    }
+                    else
+                    {
+                        frame++;
+                    }
+
+                    elapsed = 0;
+                }
+                x += 5;
+
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2]))//up
             {
-                y -= 10;
+                y -= 5;
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3]))//down
             {
-                y += 10;
+                y += 5;
             }
         }
         #endregion

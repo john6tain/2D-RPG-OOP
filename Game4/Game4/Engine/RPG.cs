@@ -10,10 +10,12 @@ namespace Game4.Engine
     /// This is the main type for your game.
     /// </summary>
     /// 
-   
+   //http://www.deviantart.com/tag/rpgsprite
     public class RPG : Game
     {
-      
+
+        private Rectangle destRect;
+        private Rectangle sourceRect;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -23,7 +25,10 @@ namespace Game4.Engine
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-           
+
+            // Set device frame rate to 30 fps.
+            TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
+
         }
 
         /// <summary>
@@ -36,6 +41,7 @@ namespace Game4.Engine
         {
             // TODO: Add your initialization logic here
             
+
             base.Initialize();
         }
 
@@ -45,12 +51,12 @@ namespace Game4.Engine
         /// </summary>
         protected override void LoadContent()
         {
-            
+
             // change these names to the names of your images
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-                one.Pic = Content.Load<Texture2D>("images/hero");
+            one.Pic = Content.Load<Texture2D>("images/pr");
             two.Pic = Content.Load<Texture2D>("images/hero");
             // TODO: use this.Content to load your game content here
         }
@@ -71,13 +77,16 @@ namespace Game4.Engine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            one.Moving(PlayerIndex.One,new Keys[] {Keys.A, Keys.D,Keys.W,Keys.S});
-           two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down });
-
+            one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S });
+            two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down });
+          one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            sourceRect = new Rectangle(31 * one.Frame, 0, 31, 52);
             base.Update(gameTime);
+
         }
 
         /// <summary>
@@ -86,10 +95,11 @@ namespace Game4.Engine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+
             GraphicsDevice.Clear(Color.Wheat);
             spriteBatch.Begin();
-           spriteBatch.Draw(one.Pic, new Rectangle(one.X, one.Y, 100, 100),Color.Black);
-            spriteBatch.Draw(two.Pic, new Rectangle(two.X, two.Y, 100, 100), Color.Black);
+            spriteBatch.Draw(one.Pic, new Rectangle(one.X, one.Y, 60, 60),sourceRect, Color.White);
+            spriteBatch.Draw(two.Pic, new Rectangle(two.X, two.Y, 100, 100), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
