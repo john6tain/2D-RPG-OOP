@@ -1,4 +1,7 @@
-﻿using Game4.Players;
+﻿using System.Runtime.CompilerServices;
+using Game4.Engine;
+using Game4.Players;
+using Game4.PlayersAndClasses;
 using Microsoft.Win32;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -118,19 +121,40 @@ namespace Game4
     	     this.Elapsed = 0;
         }
         #region Moving Method
+
         /// <summary>
         /// Method Moving
         /// </summary>
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
-        public void Moving(PlayerIndex playerIndex, Keys[] keyses)
+        /// <param name="backgroundElapsed"></param>
+        public void Moving(PlayerIndex playerIndex, Keys[] keyses,ref ScrollingBackground background,GraphicsDeviceManager graphics)
         {
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0]))//left
             {
-                x -= 5;
+
+                if (x>-400)
+                {
+                    x -= 2;
+                   
+                        background.Update(2, 0, "x");
+                    
+                   
+
+                }
+                
+                    
+                
+                
+              
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1]))//right
             {
+                if (x>=graphics.PreferredBackBufferWidth+ (graphics.PreferredBackBufferWidth/2))
+                {
+                    x -=2 ;
+                    background.Update(2,0,"-x");
+                }
                 if (elapsed >= delay)
                 {
                     if (this.frame >= 1)
@@ -144,16 +168,31 @@ namespace Game4
 
                     elapsed = 0;
                 }
-                x += 5;
+                x += 2;
 
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2]))//up
             {
-                y -= 5;
+             
+                if (y >= graphics.PreferredBackBufferHeight )
+                {
+                  //  y += 2;
+                    background.Update(0, 2, "+y");
+                }
+                y -= 2;
+
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3]))//down
             {
-                y += 5;
+               
+                if (y >= graphics.PreferredBackBufferHeight)
+                {
+                    y --;
+
+                    background.Update(0, 2, "-y");
+                }
+                y += 2;
+
             }
         }
         #endregion

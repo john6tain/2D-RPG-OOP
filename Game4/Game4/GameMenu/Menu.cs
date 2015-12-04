@@ -135,7 +135,7 @@ namespace Game4
         {
             this.graphics.PreferredBackBufferWidth = Width;
             this.graphics.PreferredBackBufferHeight = Height;
-            this.graphics.IsFullScreen = false;
+            this.graphics.IsFullScreen = true;
             player = new WMPLib.WindowsMediaPlayer();
             player.URL = @"C:\Users\John\Documents\Visual Studio 2015\Projects\Game4\Game4\Content\songs\menu.mp3";
             player.settings.setMode("loop", true);
@@ -169,7 +169,7 @@ namespace Game4
 
             IsMouseVisible = true;
             if (mouseState.LeftButton == ButtonState.Pressed &&
-                (new Rectangle((Width / 2) - (full ? 450 : 50), (Height / 2) - (full ? 320 : 200), 100, 70).Contains(
+                (new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 200, 100, 70).Contains(
                     mousePosition)))
             {
                 player.controls.stop();
@@ -178,7 +178,7 @@ namespace Game4
                     game.Run();
                 }
             }
-            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((Width / 2) - (full ? 450 : 50), (Height / 2) - (full ? 250 : 100), 100, 70).Contains(mousePosition)))
+            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 100, 100, 70)).Contains(mousePosition))
             {
                 Options op = new Options();
 

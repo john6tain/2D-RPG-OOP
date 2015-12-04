@@ -16,6 +16,7 @@ namespace Game4.Engine
 
         private Rectangle destRect;
         private Rectangle sourceRect;
+        private ScrollingBackground myBackground;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -27,7 +28,7 @@ namespace Game4.Engine
             Content.RootDirectory = "Content";
 
             // Set device frame rate to 30 fps.
-            TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
+              TargetElapsedTime = TimeSpan.FromSeconds(1 / 60.0);
 
         }
 
@@ -40,8 +41,8 @@ namespace Game4.Engine
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
 
+            
             base.Initialize();
         }
 
@@ -51,10 +52,13 @@ namespace Game4.Engine
         /// </summary>
         protected override void LoadContent()
         {
-
+            this.graphics.IsFullScreen = true;
             // change these names to the names of your images
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            myBackground = new ScrollingBackground();
+         Texture2D background = Content.Load<Texture2D>("images/firstmap");
+          myBackground.Load(GraphicsDevice, background);
 
             one.Pic = Content.Load<Texture2D>("images/pr");
             two.Pic = Content.Load<Texture2D>("images/hero");
@@ -81,10 +85,13 @@ namespace Game4.Engine
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S });
-            two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down });
+            one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground,this.graphics);
+            two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down },ref  myBackground,this.graphics);
           one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             sourceRect = new Rectangle(31 * one.Frame, 0, 31, 52);
+           
+          //  myBackground.Update(one.Frame*2);
+
             base.Update(gameTime);
 
         }
@@ -98,8 +105,11 @@ namespace Game4.Engine
 
             GraphicsDevice.Clear(Color.Wheat);
             spriteBatch.Begin();
+            myBackground.Draw(spriteBatch);
             spriteBatch.Draw(one.Pic, new Rectangle(one.X, one.Y, 60, 60),sourceRect, Color.White);
             spriteBatch.Draw(two.Pic, new Rectangle(two.X, two.Y, 100, 100), Color.White);
+           
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
