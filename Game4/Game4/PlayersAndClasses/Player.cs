@@ -20,7 +20,7 @@ namespace Game4
         private float elapsed;
         private float delay;
         private int frame;
-        protected Texture2D[] pic;
+        protected Texture2D pic;
         protected double life;
         protected Ability myAbility;
         private string pos;
@@ -56,7 +56,7 @@ namespace Game4
                 y = value;
             }
         }
-        public Texture2D[] Pics
+        public Texture2D Pic
         {
             get { return this.pic; }
             set { this.pic = value; }
@@ -116,12 +116,12 @@ namespace Game4
             this.Frame = 0;
             this.Elapsed = 0;
         }
-    	 public Player(int x, int y, Texture2D[] pics,double life,Ability myAbility)
+    	 public Player(int x, int y, Texture2D pic,double life,Ability myAbility)
         {
             this.X = x;
             this.Y = y;
             this.Life = 1000;
-            this.Pics = pics;
+            this.Pic = pic;
 	        this.MyAbility = myAbility;
     	     this.Delay = 100f;
     	     this.Frame =0;
@@ -136,9 +136,10 @@ namespace Game4
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
         /// <param name="backgroundElapsed"></param>
-        public void Moving(PlayerIndex playerIndex, Keys[] keyses,ref ScrollingBackground background,GraphicsDeviceManager graphics,string a)
+        public void Moving(PlayerIndex playerIndex, Keys[] keyses,ref ScrollingBackground background,GraphicsDeviceManager graphics, Texture2D[] pics)
         {
-            
+          
+           
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0]))//left
             {
                 
@@ -147,7 +148,21 @@ namespace Game4
                     x -= 2;
                     background.Update(2, 0, "x");
                 }
+                if (elapsed >= delay)
+                {
+                    if (this.frame >= 1)
+                    {
+                        frame = 0;
+                    }
+                    else
+                    {
+                        frame++;
+                    }
+
+                    elapsed = 0;
+                }
                 this.Pos = "left";
+                this.pic = pics[2];
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1]))//right
             {
@@ -171,6 +186,7 @@ namespace Game4
                 }
                 x += 2;
                 this.Pos = "right";
+                this.pic = pics[3];
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2]))//up
             {
@@ -178,10 +194,24 @@ namespace Game4
                 if (y >= graphics.PreferredBackBufferHeight )
                 {
                   //  y += 2;
-                    background.Update(0, 2, "+y");
+                    background.Update(0, 2, "y");
+                }
+                if (elapsed >= delay)
+                {
+                    if (this.frame >= 1)
+                    {
+                        frame = 0;
+                    }
+                    else
+                    {
+                        frame++;
+                    }
+
+                    elapsed = 0;
                 }
                 y -= 2;
                 this.Pos = "up";
+                this.pic = pics[0];
 
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3]))//down
@@ -193,8 +223,23 @@ namespace Game4
 
                     background.Update(0, 2, "-y");
                 }
+                if (elapsed >= delay)
+                {
+                    if (this.frame >= 1)
+                    {
+                        frame = 0;
+                    }
+                    else
+                    {
+                        frame++;
+                    }
+
+                    elapsed = 0;
+                }
                 y += 2;
                 this.Pos = "down";
+                this.pic = null;
+               this.pic = pics[1];
             }
         }
         #endregion

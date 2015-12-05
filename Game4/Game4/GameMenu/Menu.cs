@@ -1,4 +1,5 @@
-﻿using Game4.Engine;
+﻿using System;
+using Game4.Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -25,6 +26,10 @@ namespace Game4
         private int height;
         private int width;
         private bool full;
+        private int frame = 0;
+        private Rectangle sourceRect;
+        private int elapsed=0;
+        private MediaLibrary sampleMediaLibrary;
 
         #endregion
 
@@ -108,6 +113,7 @@ namespace Game4
             this.height = 500;
             this.width = 500;
             this.full = false;
+            TargetElapsedTime = TimeSpan.FromSeconds(1 / 60.0);
         }
         public Menu(Texture2D background, Texture2D options, Texture2D play, Texture2D Quit, SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
         {
@@ -137,8 +143,11 @@ namespace Game4
             this.graphics.PreferredBackBufferHeight = Height;
             this.graphics.IsFullScreen = true;
             player = new WMPLib.WindowsMediaPlayer();
-            player.URL = @"C:\Users\John\Documents\Visual Studio 2015\Projects\Game4\Game4\Content\songs\menu.mp3";
+
+            player.URL = @"C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\Content\songs/menu.mp3";
             player.settings.setMode("loop", true);
+
+             background = Content.Load<Texture2D>("images/fire");
             player.controls.play();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             play = Content.Load<Texture2D>("images/play");
@@ -160,7 +169,7 @@ namespace Game4
 
         protected override void Update(GameTime gameTime)
         {
-
+            elapsed += gameTime.ElapsedGameTime.Milliseconds;
             var mouseState = Mouse.GetState();
             var mousePosition = new Point(mouseState.X, mouseState.Y);
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
@@ -187,21 +196,35 @@ namespace Game4
 
 
             }
-            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((Width / 4) - 60/* - (full ? 450 : 50)*/, (Height / 3) - 20/*-(full?150:0)*/, 100, 70).Contains(mousePosition)))
+            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2), 100, 70).Contains(mousePosition)))
             {
 
                 Exit();
             }
+            if (elapsed >= 200)
+            {
+                if (frame >= 2)
+                {
+                    frame = 1;
+                }
+                else
+                {
+                    frame++;
+                }
 
+                elapsed = 0;
+            }
+            sourceRect = new Rectangle(124 *frame,0,640, 250);
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Wheat);
+            GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            spriteBatch.Draw(play, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 200, 100, 70), Color.Black);
-            spriteBatch.Draw(options, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 100, 100, 70), Color.Black);
-            spriteBatch.Draw(quit, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2), 100, 70), Color.Black);
+            spriteBatch.Draw(background, new Rectangle(0, 0, Window.ClientBounds.Width+500, Window.ClientBounds.Height),sourceRect,Color.White);
+            spriteBatch.Draw(play, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 200, 100, 70), Color.White);
+            spriteBatch.Draw(options, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 100, 100, 70), Color.White);
+            spriteBatch.Draw(quit, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2), 100, 70), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
