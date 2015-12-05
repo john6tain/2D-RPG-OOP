@@ -12,6 +12,8 @@ namespace Game4.PlayersAndClasses
 {
     public class Alexsination : Player
     {
+        private int energy;
+
         #region Constructor
 
         /// <summary>
@@ -22,7 +24,7 @@ namespace Game4.PlayersAndClasses
             
         }
         public Alexsination(int x, int y, Texture2D pic, double life, Ability teleport, int energy)
-           : base(x, y, pic,1200, teleport)
+           : base(x, y, pic, life, teleport)
         {
             this.Energy = 100;
         }
@@ -34,14 +36,14 @@ namespace Game4.PlayersAndClasses
         /// </summary>
         public int Energy
         {
-            get { return this.Energy; }
+            get { return this.energy; }
             set
             {
                 if (value > 100)
                 {
                     value += 100;
                 }
-                this.Energy = value;
+                this.energy = value;
             }
         }
 

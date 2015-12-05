@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 /// <summary>
 /// John made this class
 /// #Programmer
-/// #
+/// #Caffeine
 /// </summary>
 
 
@@ -18,8 +18,8 @@ namespace Game4.PlayersAndClasses
         /// </summary>
         private int caffeine;
         #endregion
-        #region Constructor
 
+        #region Constructor
         /// <summary>
         /// Constructor
         /// </summary>
@@ -27,21 +27,22 @@ namespace Game4.PlayersAndClasses
         {
             
         }
-        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDors, int caffeine)
-           : base(x, y, pic,life,hackingDors)
+        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDoors, int caffeine)
+           : base(x, y, pic, life, hackingDoors)
         {
             this.Caffeine = caffeine;
         }
+
         #endregion
 
-        #region Fields
+        #region Properties
         /// <summary>
-        /// Proparties
+        /// Properties
         /// </summary>
         public int Caffeine
         {
             get { return this.caffeine; }
-            set{ this.caffeine = value;}
+            set { this.caffeine = value; }
         }
 
         #endregion

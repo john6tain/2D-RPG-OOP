@@ -42,6 +42,7 @@
     <Compile Include="Engine\RPG.cs" />
     <Compile Include="PlayersAndClasses\Ability.cs" />
     <Compile Include="PlayersAndClasses\Alexsination.cs" />
+    <Compile Include="PlayersAndClasses\ChichoMitko.cs" />
     <Compile Include="PlayersAndClasses\Item.cs" />
     <Compile Include="PlayersAndClasses\Player.cs" />
     <Compile Include="PlayersAndClasses\Programmer.cs" />

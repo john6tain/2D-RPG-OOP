@@ -10,7 +10,7 @@ namespace Game4.PlayersAndClasses
 {
     public class ScrollingBackground
     {
-        private Vector2 screenpos, origin, texturesize;
+        private Vector2 screenpos, origin, textureSize;
         private Texture2D mytexture;
         private int screenWidth;
 
@@ -18,8 +18,8 @@ namespace Game4.PlayersAndClasses
         {
             get { return this.screenpos; }
             set { this.screenpos = value; }
-            
         }
+
         public void Load(GraphicsDevice device, Texture2D backgroundTexture)
         {
             mytexture = backgroundTexture;
@@ -29,24 +29,22 @@ namespace Game4.PlayersAndClasses
             // center of the top edge.
             origin = new Vector2(mytexture.Width / 2, 0);
             // Set the screen position to the center of the screen.
-            screenpos = new Vector2(screenwidth, screenWidth );
+            screenpos = new Vector2(screenwidth, screenWidth);
             // Offset to draw the second texture, when necessary.
-            texturesize = new Vector2(-400, 500);
+            textureSize = new Vector2(-400, 500);
         }
-        public void Update(float deltaX,float deltaY,string isX)
-        {
-            if (isX=="-x")
-            {
-                    screenpos.X -= deltaX;
-                    screenpos.X = screenpos.X%mytexture.Width;
-            }
-            if (isX=="x")
-            {
 
-                    screenpos.X += deltaX;
-                    screenpos.X = screenpos.X%mytexture.Width;
-                
-                
+        public void Update(float deltaX, float deltaY, string isX)
+        {
+            if (isX == "-x")
+            {
+                screenpos.X -= deltaX;
+                screenpos.X = screenpos.X % mytexture.Width;
+            }
+            if (isX == "x")
+            {
+                screenpos.X += deltaX;
+                screenpos.X = screenpos.X % mytexture.Width;
             }
             if (isX == "y")
             {
@@ -58,7 +56,6 @@ namespace Game4.PlayersAndClasses
                 screenpos.Y -= deltaY;
                 screenpos.Y = screenpos.Y % mytexture.Height;
             }
-
         }
 
         public void Draw(SpriteBatch batch)
@@ -69,12 +66,11 @@ namespace Game4.PlayersAndClasses
                 batch.Draw(mytexture, screenpos, null,
                      Color.White, 0, origin, 1, SpriteEffects.None, 0f);
             }
+
             // Draw the texture a second time, behind the first,
             // to create the scrolling illusion.
-            batch.Draw(mytexture, screenpos - texturesize, null,
+            batch.Draw(mytexture, screenpos - textureSize, null,
                  Color.White, 0, origin, 1, SpriteEffects.None, 0f);
         }
-
-
     }
 }

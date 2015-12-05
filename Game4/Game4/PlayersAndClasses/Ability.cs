@@ -10,15 +10,15 @@ namespace Game4.Players
     public abstract class Ability
     {
         #region Fields
-
         /// <summary>
-        /// FIELDS Ability
+        /// Ability Fields
         /// </summary>
         protected string abilityName;
         protected int abilityValue;
 
         #endregion
 
+        #region Constructor
         /// <summary>
         /// Constructor
         /// </summary>
@@ -30,6 +30,8 @@ namespace Game4.Players
             this.AbilityValue = abilityValue;
         }
 
+        #endregion
+
         #region Properties
         /// <summary>
         /// Properties
@@ -38,18 +40,17 @@ namespace Game4.Players
         {
             get { return this.abilityValue; }
             set { this.abilityValue = value; }
-
         }
 
         public string AbilityName
         {
             get { return this.abilityName; }
             set { this.abilityName = value; }
-
         }
+
         #endregion
 
-
+        #region Methods
         /// <summary>
         /// Add Item Method
         /// </summary>
@@ -58,5 +59,7 @@ namespace Game4.Players
         {
             this.abilityValue += item.Value;
         }
+
+        #endregion
     }
 }

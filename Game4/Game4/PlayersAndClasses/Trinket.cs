@@ -15,15 +15,16 @@ namespace Game4.PlayersAndClasses
     {
         #region Fields
         /// <summary>
-        /// Props
+        /// Fields
         /// </summary>
-        #endregion
         private Texture2D pic;
         private string name;
         private string bonus;
         private int percent;
-        #region Constructor
 
+        #endregion
+
+        #region Constructor
         /// <summary>
         /// Constructor
         /// </summary>
@@ -34,11 +35,12 @@ namespace Game4.PlayersAndClasses
             this.Bonus = bonus;
             this.Percent = percent;
         }
-        #endregion
-        #region Constructor
 
+        #endregion
+
+        #region Constructor
         /// <summary>
-        /// Proparties
+        /// Constructor
         /// </summary>
         public int Percent
         {
@@ -47,7 +49,7 @@ namespace Game4.PlayersAndClasses
         }
         public string Bonus
         {
-            get {return this.Bonus; }
+            get { return this.Bonus; }
             set { this.Bonus = value; }
         }
         public string Name
@@ -60,6 +62,7 @@ namespace Game4.PlayersAndClasses
             get { return this.pic; }
             set { this.pic = value; }
         }
+
         #endregion
     }
 }

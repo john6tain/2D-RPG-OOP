@@ -13,7 +13,7 @@ namespace Game4
     {
         #region Fields
         /// <summary>
-        /// FIELDS
+        /// Fields
         /// </summary>
         protected int x;
         protected int y;
@@ -24,7 +24,7 @@ namespace Game4
         protected double life;
         protected Ability myAbility;
         private string pos;
-        //TODO :  class weapan
+        //TODO :  class weapon
         #endregion
 
         #region Properties
@@ -100,14 +100,16 @@ namespace Game4
             set { this.pos = value; }
 
         }
+
         #endregion
 
+        #region Constructor
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Player(int x, int y )
+        public Player(int x, int y)
         {
             this.X = x;
             this.Y = y;
@@ -116,34 +118,35 @@ namespace Game4
             this.Frame = 0;
             this.Elapsed = 0;
         }
-    	 public Player(int x, int y, Texture2D pic,double life,Ability myAbility)
+        public Player(int x, int y, Texture2D pic, double life, Ability myAbility)
         {
             this.X = x;
             this.Y = y;
             this.Life = 1000;
             this.Pic = pic;
-	        this.MyAbility = myAbility;
-    	     this.Delay = 100f;
-    	     this.Frame =0;
-    	     this.Elapsed = 0;
+            this.MyAbility = myAbility;
+            this.Delay = 100f;
+            this.Frame = 0;
+            this.Elapsed = 0;
         }
 
-        #region Moving Method
+        #endregion
 
+        #region Moving Method
         /// <summary>
-        /// Method Moving
+        /// Moving Method
         /// </summary>
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
         /// <param name="backgroundElapsed"></param>
-        public void Moving(PlayerIndex playerIndex, Keys[] keyses,ref ScrollingBackground background,GraphicsDeviceManager graphics, Texture2D[] pics)
+        public void Moving(PlayerIndex playerIndex, Keys[] keyses, ref ScrollingBackground background, GraphicsDeviceManager graphics, Texture2D[] pics)
         {
-          
-           
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0]))//left
+
+
+            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0])) //left
             {
-                
-                if (x>-400)
+
+                if (x > -400)
                 {
                     x -= 2;
                     background.Update(2, 0, "x");
@@ -164,12 +167,12 @@ namespace Game4
                 this.Pos = "left";
                 this.pic = pics[2];
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1]))//right
+            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1])) //right
             {
-                if (x>=graphics.PreferredBackBufferWidth+ (graphics.PreferredBackBufferWidth/2))
+                if (x >= graphics.PreferredBackBufferWidth + (graphics.PreferredBackBufferWidth / 2))
                 {
-                    x -=2 ;
-                    background.Update(2,0,"-x");
+                    x -= 2;
+                    background.Update(2, 0, "-x");
                 }
                 if (elapsed >= delay)
                 {
@@ -188,12 +191,12 @@ namespace Game4
                 this.Pos = "right";
                 this.pic = pics[3];
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2]))//up
+            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
             {
-             
-                if (y >= graphics.PreferredBackBufferHeight )
+
+                if (y >= graphics.PreferredBackBufferHeight)
                 {
-                  //  y += 2;
+                    //  y += 2;
                     background.Update(0, 2, "y");
                 }
                 if (elapsed >= delay)
@@ -214,12 +217,12 @@ namespace Game4
                 this.pic = pics[0];
 
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3]))//down
+            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
             {
-               
+
                 if (y >= graphics.PreferredBackBufferHeight)
                 {
-                    y --;
+                    y--;
 
                     background.Update(0, 2, "-y");
                 }
@@ -239,11 +242,9 @@ namespace Game4
                 y += 2;
                 this.Pos = "down";
                 this.pic = null;
-               this.pic = pics[1];
+                this.pic = pics[1];
             }
         }
         #endregion
     }
-
-
 }
