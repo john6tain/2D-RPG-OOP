@@ -35,12 +35,12 @@ namespace Game4
         {
             get
             {
-                return x;
+                return this.x;
             }
 
             set
             {
-                x = value;
+                this.x = value;
             }
         }
 
@@ -48,12 +48,12 @@ namespace Game4
         {
             get
             {
-                return y;
+                return this.y;
             }
 
             set
             {
-                y = value;
+                this.y = value;
             }
         }
         public Texture2D Pic
@@ -146,33 +146,45 @@ namespace Game4
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0])) //left
             {
 
-                if (x > -400)
+                if (background.Screenpos.X < (graphics.PreferredBackBufferWidth - 80))
                 {
-                    x -= 2;
-                    background.Update(2, 0, "x");
+                    background.Update(2, 0, "x", graphics);
                 }
-                if (elapsed >= delay)
+                else
                 {
-                    if (this.frame >= 1)
+                    x-=2;
+                }
+                if (this.Elapsed >= this.Delay)
+                {
+                    if (this.Frame >= 1)
                     {
-                        frame = 0;
+                        this.Frame = 0;
                     }
                     else
                     {
-                        frame++;
+                        this.Frame++;
                     }
 
-                    elapsed = 0;
+                    this.Elapsed = 0;
                 }
                 this.Pos = "left";
+                this.pic = null;
                 this.pic = pics[2];
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1])) //right
             {
+                if (background.Screenpos.X <150)
+                {
+                    background.Update(2f,0,"-x", graphics);
+                }
+                else
+                {
+                    x += 2;
+                }
                 if (x >= graphics.PreferredBackBufferWidth + (graphics.PreferredBackBufferWidth / 2))
                 {
                     x -= 2;
-                    background.Update(2, 0, "-x");
+                    background.Update(2, 0, "-x", graphics);
                 }
                 if (elapsed >= delay)
                 {
@@ -187,17 +199,19 @@ namespace Game4
 
                     elapsed = 0;
                 }
-                x += 2;
                 this.Pos = "right";
+                this.pic = null;
                 this.pic = pics[3];
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
             {
 
-                if (y >= graphics.PreferredBackBufferHeight)
+                    background.Update(0, 2, "y", graphics);
+
+                if (background.Screenpos.Y >= graphics.PreferredBackBufferHeight)
                 {
                     //  y += 2;
-                    background.Update(0, 2, "y");
+                    background.Update(0, 2, "y", graphics);
                 }
                 if (elapsed >= delay)
                 {
@@ -212,19 +226,20 @@ namespace Game4
 
                     elapsed = 0;
                 }
-                y -= 2;
                 this.Pos = "up";
+                this.pic = null;
                 this.pic = pics[0];
 
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
             {
-
-                if (y >= graphics.PreferredBackBufferHeight)
+                if (background.Screenpos.Y > 400)
                 {
-                    y--;
-
-                    background.Update(0, 2, "-y");
+                    background.Update(0, 2, "-y", graphics);
+                }
+                else
+                {
+                    y += 2;
                 }
                 if (elapsed >= delay)
                 {
@@ -239,7 +254,6 @@ namespace Game4
 
                     elapsed = 0;
                 }
-                y += 2;
                 this.Pos = "down";
                 this.pic = null;
                 this.pic = pics[1];

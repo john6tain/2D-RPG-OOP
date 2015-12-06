@@ -33,25 +33,26 @@ namespace Game4.PlayersAndClasses
             // Offset to draw the second texture, when necessary.
             textureSize = new Vector2(-400, 500);
         }
-
-        public void Update(float deltaX, float deltaY, string isX)
+        public void Update(float deltaX,float deltaY,string isX, GraphicsDeviceManager graphics)
         {
-            if (isX == "-x")
+           
+                if (isX == "x") //left
+                {
+                    screenpos.X += deltaX;
+                    screenpos.X = screenpos.X%mytexture.Width;
+                }
+            if (isX=="-x")//right 
             {
-                screenpos.X -= deltaX;
-                screenpos.X = screenpos.X % mytexture.Width;
+                    screenpos.X -= deltaX;
+                screenpos.X = screenpos.X%mytexture.Width;
             }
-            if (isX == "x")
-            {
-                screenpos.X += deltaX;
-                screenpos.X = screenpos.X % mytexture.Width;
-            }
-            if (isX == "y")
+           
+            if (isX == "y")//down
             {
                 screenpos.Y += deltaY;
                 screenpos.Y = screenpos.Y % mytexture.Height;
             }
-            if (isX == "-y")
+            if (isX == "-y")//up
             {
                 screenpos.Y -= deltaY;
                 screenpos.Y = screenpos.Y % mytexture.Height;

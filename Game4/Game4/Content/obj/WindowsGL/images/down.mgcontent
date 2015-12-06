@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Jamboy/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/down.png</SourceFile>
-  <SourceTime>2015-12-05T13:36:52.6096109+02:00</SourceTime>
-  <DestFile>C:/Users/Jamboy/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/down.xnb</DestFile>
-  <DestTime>2015-12-05T13:51:34.3337334+02:00</DestTime>
+  <SourceFile>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/down.png</SourceFile>
+  <SourceTime>2015-12-06T06:01:42+02:00</SourceTime>
+  <DestFile>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/down.xnb</DestFile>
+  <DestTime>2015-12-06T17:01:33.5938758+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
