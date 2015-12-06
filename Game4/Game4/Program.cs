@@ -15,7 +15,8 @@ namespace Game4
         static void Main()
         {
             using (var game = new Menu())
-                game.Run();
+            { game.Run(); }
+               
         }
     }
 #endif

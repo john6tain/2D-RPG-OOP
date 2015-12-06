@@ -40,6 +40,15 @@
   <ItemGroup>
     <Compile Include="GameMenu\Menu.cs" />
     <Compile Include="Engine\RPG.cs" />
+<<<<<<< HEAD
+    <Compile Include="Players\Ability.cs" />
+    <Compile Include="Players\Alexsination.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Players\Programmer.cs" />
+    <Compile Include="ScrollingBackground.cs" />
+    <Compile Include="Items\Trinket.cs" />
+=======
     <Compile Include="PlayersAndClasses\Ability.cs" />
     <Compile Include="PlayersAndClasses\Alexsination.cs" />
     <Compile Include="PlayersAndClasses\ChichoMitko.cs" />
@@ -48,6 +57,7 @@
     <Compile Include="PlayersAndClasses\Programmer.cs" />
     <Compile Include="PlayersAndClasses\ScrollingBackground.cs" />
     <Compile Include="PlayersAndClasses\Trinket.cs" />
+>>>>>>> origin/master
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameMenu\Options.cs" />

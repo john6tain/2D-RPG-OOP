@@ -222,9 +222,9 @@ namespace Game4
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, Window.ClientBounds.Width+500, Window.ClientBounds.Height),sourceRect,Color.White);
-            spriteBatch.Draw(play, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 200, 100, 70), Color.White);
-            spriteBatch.Draw(options, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 100, 100, 70), Color.White);
-            spriteBatch.Draw(quit, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2), 100, 70), Color.White);
+            spriteBatch.Draw(play, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 200, 150, 70), Color.White);
+            spriteBatch.Draw(options, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2) - 100, 150, 70), Color.White);
+            spriteBatch.Draw(quit, new Rectangle((Window.ClientBounds.Width / 2) - 50, (Window.ClientBounds.Height / 2), 10, 70), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
