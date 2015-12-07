@@ -57,7 +57,7 @@ namespace Game4.Players
         /// <param name="item"></param>
         public void AddItem(Item item)
         {
-            this.abilityValue += item.Value;
+            this.abilityValue += item.AmountBonus;
         }
 
         #endregion

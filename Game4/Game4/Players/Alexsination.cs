@@ -19,7 +19,8 @@ namespace Game4.PlayersAndClasses
         /// <summary>
         /// Constructor
         /// </summary>
-        public Alexsination(int x, int y) : base(x, y)
+        public Alexsination(int x, int y) 
+			: base(x, y)
         {
             
         }
@@ -30,9 +31,11 @@ namespace Game4.PlayersAndClasses
         }
         #endregion
 
-        #region Fields
+
+
+        #region Properties
         /// <summary>
-        /// Fields
+        /// Properties
         /// </summary>
         public int Energy
         {

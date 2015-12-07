@@ -11,7 +11,7 @@ namespace Game4.PlayersAndClasses
         #region Fields
         private Texture2D itemPick;
         private string name;
-        private int value;
+        private int amountBonus;
 
         #endregion
 
@@ -19,11 +19,11 @@ namespace Game4.PlayersAndClasses
         /// <summary>
         /// Constructor
         /// </summary>
-        public Item(Texture2D itemPick, string name, int value)
+        public Item(Texture2D itemPick, string name, int amountBonus)
         {
             this.ItemPick = itemPick;
             this.Name = name;
-            this.Value = value;
+	        this.AmountBonus = amountBonus;
         }
         
         #endregion
@@ -44,10 +44,11 @@ namespace Game4.PlayersAndClasses
             set { this.name = value; }
         }
 
-        public int Value
+        public int AmountBonus
         {
-            get { return this.value; }
-            set { this.value = value; } //TODO: tva e malko 6it kazavo da se fixne
+            get { return this.amountBonus; }
+            set { this.amountBonus = value; }
+
         }
 
         #endregion

@@ -65,7 +65,14 @@ namespace Game4
         public double Life
         {
             get { return this.life; }
-            set { this.life = value; }
+	        set
+	        {
+		        if (value > 1000)
+		        {
+			        value = 1000;
+		        }
+		        this.life = value;
+	        }
         }
 
         public Ability MyAbility

@@ -59,3 +59,11 @@ C:\Users\Jamboy\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Game
 C:\Users\Jamboy\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\MonoGame.Framework.dll
 C:\Users\Jamboy\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\Jamboy\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\down.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\fire.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\firstmap.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\left.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\pr.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\THEMENU.xnb
+C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\up.xnb

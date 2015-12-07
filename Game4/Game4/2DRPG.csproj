@@ -40,6 +40,13 @@
   <ItemGroup>
     <Compile Include="GameMenu\Menu.cs" />
     <Compile Include="Engine\RPG.cs" />
+    <Compile Include="Interfaces\IDrinkable.cs" />
+    <Compile Include="Items\Potions\CoffeinePotion.cs" />
+    <Compile Include="Items\Potions\DamagePotion.cs" />
+    <Compile Include="Items\Potions\EnergyPotion.cs" />
+    <Compile Include="Items\Potions\FocusPotion.cs" />
+    <Compile Include="Items\Potions\HealthPotion.cs" />
+    <Compile Include="Items\Potions\SpeedPotion.cs" />
     <Compile Include="Players\Ability.cs" />
     <Compile Include="Players\Alexsination.cs" />
     <Compile Include="Items\Item.cs" />

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 /// <summary>
 /// John made this class
 /// #Programmer
-/// #Caffeine
+/// #Coffeine
 /// </summary>
 
 
