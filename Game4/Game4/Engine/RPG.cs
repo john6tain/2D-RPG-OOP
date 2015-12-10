@@ -29,8 +29,8 @@ namespace Game4.Engine
             allPics = new Texture2D[4];
             // Set devallPicsice frame rate to 30 fps.
             TargetElapsedTime = TimeSpan.FromSeconds(1 / 60.0);
-            one = new Alexsination(graphics.PreferredBackBufferWidth-80 , graphics.PreferredBackBufferHeight-50);
-            two = new Alexsination(0, 50);
+            one = new Programmer(graphics.PreferredBackBufferWidth-80 , graphics.PreferredBackBufferHeight-50);
+            two = new Alexsination(0, 0);
         }
 
         /// <summary>

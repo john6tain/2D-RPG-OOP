@@ -157,8 +157,9 @@ namespace Game4
                 {
                     background.Update(2, 0, "x", graphics);
                 }
-                else
+                else if(x > 0)
                 {
+
                     x-=2;
                 }
                 if (this.Elapsed >= this.Delay)
@@ -212,13 +213,15 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
             {
-
-                    background.Update(0, 2, "y", graphics);
-
                 if (background.Screenpos.Y >= graphics.PreferredBackBufferHeight)
                 {
                     //  y += 2;
                     background.Update(0, 2, "y", graphics);
+                }
+                 if (y > 0)
+                {
+
+                    y -=2 ;
                 }
                 if (elapsed >= delay)
                 {
@@ -240,7 +243,7 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
             {
-                if (background.Screenpos.Y > 400)
+                if (background.Screenpos.Y <= graphics.PreferredBackBufferHeight)
                 {
                     background.Update(0, 2, "-y", graphics);
                 }
