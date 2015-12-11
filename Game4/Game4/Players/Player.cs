@@ -15,8 +15,8 @@ namespace Game4
         /// <summary>
         /// Fields
         /// </summary>
-        protected int x;
-        protected int y;
+        protected double x;
+        protected double y;
         private float elapsed;
         private float delay;
         private int frame;
@@ -31,7 +31,7 @@ namespace Game4
         /// <summary>
         /// Properties
         /// </summary>
-        public int X
+        public double X
         {
             get
             {
@@ -44,7 +44,7 @@ namespace Game4
             }
         }
 
-        public int Y
+        public double Y
         {
             get
             {
@@ -116,7 +116,7 @@ namespace Game4
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Player(int x, int y)
+        public Player(double x, int y)
         {
             this.X = x;
             this.Y = y;
@@ -125,7 +125,7 @@ namespace Game4
             this.Frame = 0;
             this.Elapsed = 0;
         }
-        public Player(int x, int y, Texture2D pic, double life, Ability myAbility)
+        public Player(double x, int y, Texture2D pic, double life, Ability myAbility)
         {
             this.X = x;
             this.Y = y;
@@ -181,19 +181,16 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1])) //right
             {
-                if (background.Screenpos.X <150)
+                if (background.Screenpos.X >-228)
                 {
+
                     background.Update(2f,0,"-x", graphics);
                 }
-                else
+                else if (x < 1300)
                 {
                     x += 2;
                 }
-                if (x >= graphics.PreferredBackBufferWidth + (graphics.PreferredBackBufferWidth / 2))
-                {
-                    x -= 2;
-                    background.Update(2, 0, "-x", graphics);
-                }
+
                 if (elapsed >= delay)
                 {
                     if (this.frame >= 1)
@@ -213,15 +210,14 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
             {
-                if (background.Screenpos.Y >= graphics.PreferredBackBufferHeight)
+                if (background.Screenpos.Y <490)
                 {
-                    //  y += 2;
+                      y -= 0.5;
                     background.Update(0, 2, "y", graphics);
                 }
-                 if (y > 0)
+                else if(y > 10)
                 {
-
-                    y -=2 ;
+                        y -= 2;
                 }
                 if (elapsed >= delay)
                 {
@@ -243,11 +239,13 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
             {
-                if (background.Screenpos.Y <= graphics.PreferredBackBufferHeight)
+                if (background.Screenpos.Y  >-1120)
                 {
+                    y+=0.5;
                     background.Update(0, 2, "-y", graphics);
+                    
                 }
-                else
+                else if (y < 700)
                 {
                     y += 2;
                 }

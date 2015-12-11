@@ -30,7 +30,7 @@ namespace Game4.Engine
             // Set devallPicsice frame rate to 30 fps.
             TargetElapsedTime = TimeSpan.FromSeconds(1 / 60.0);
             one = new Programmer(graphics.PreferredBackBufferWidth-80 , graphics.PreferredBackBufferHeight-50);
-            two = new Alexsination(0, 0);
+            two = new Alexsination(1000, 0);
         }
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Game4.Engine
             GraphicsDevice.Clear(Color.Wheat);
             spriteBatch.Begin();
             myBackground.Draw(spriteBatch);
-            spriteBatch.Draw(one.Pic, new Rectangle(one.X, one.Y, 60, 60), sourceRectOne, Color.White);
-            spriteBatch.Draw(two.Pic, new Rectangle(two.X, two.Y, 60, 60), sourceRectTwo, Color.White);
+            spriteBatch.Draw(one.Pic, new Rectangle((int)one.X, (int)one.Y, 60, 60), sourceRectOne, Color.White);
+            spriteBatch.Draw(two.Pic, new Rectangle((int)two.X, (int)two.Y, 60, 60), sourceRectTwo, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
