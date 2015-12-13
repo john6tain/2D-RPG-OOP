@@ -1,9 +1,9 @@
 ﻿using System;
-using Game4.Interfaces;
-using Game4.PlayersAndClasses;
+using RPGGame.Interfaces;
 using Microsoft.Xna.Framework.Graphics;
+using RPGGame.PlayersAndClasses;
 
-namespace Game4.Items.Potions
+namespace RPGGame.Items.Potions
 {
 	public class SpeedPotion : Item, IDrinkable
 	{

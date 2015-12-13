@@ -1,13 +1,14 @@
 ﻿using System.Runtime.CompilerServices;
-using Game4.Engine;
-using Game4.Players;
-using Game4.PlayersAndClasses;
+using RPGGame.Engine;
+using RPGGame.Players;
+using RPGGame.PlayersAndClasses;
 using Microsoft.Win32;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using RPGGame.PlayersAndClasses;
 
-namespace Game4
+namespace RPGGame
 {
     public abstract class Player
     {
@@ -181,7 +182,7 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1])) //right
             {
-                if (background.Screenpos.X >-228)
+                if (background.Screenpos.X >(graphics.PreferredBackBufferWidth/2)-480)
                 {
 
                     background.Update(2f,0,"-x", graphics);
@@ -210,15 +211,15 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
             {
-                if (background.Screenpos.Y <490)
-                {
+              /*  if (background.Screenpos.Y <490)
+                {*/
                       y -= 0.5;
                     background.Update(0, 2, "y", graphics);
-                }
+           /*     }
                 else if(y > 10)
                 {
                         y -= 2;
-                }
+                }*/
                 if (elapsed >= delay)
                 {
                     if (this.frame >= 1)
@@ -239,7 +240,7 @@ namespace Game4
             }
             if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
             {
-                if (background.Screenpos.Y  >-1120)
+                if (background.Screenpos.Y  > (graphics.PreferredBackBufferHeight+100)*-1)
                 {
                     y+=0.5;
                     background.Update(0, 2, "-y", graphics);

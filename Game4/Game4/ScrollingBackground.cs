@@ -6,13 +6,13 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game4.PlayersAndClasses
+namespace RPGGame.PlayersAndClasses
 {
     public class ScrollingBackground
     {
         private Vector2 screenpos, origin, textureSize;
         private Texture2D mytexture;
-        private int screenWidth;
+        private int screenHeight;
 
         public Vector2 Screenpos
         {
@@ -23,15 +23,15 @@ namespace Game4.PlayersAndClasses
         public void Load(GraphicsDevice device, Texture2D backgroundTexture)
         {
             mytexture = backgroundTexture;
-            screenWidth = device.Viewport.Height;
-            int screenwidth = device.Viewport.Width;
+            screenHeight = device.Viewport.Height;
+            int screenwidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             // Set the origin so that we're drawing from the 
             // center of the top edge.
             origin = new Vector2(mytexture.Width / 2, 0);
             // Set the screen position to the center of the screen.
-            screenpos = new Vector2(screenwidth, screenWidth);
+            screenpos = new Vector2(screenwidth, screenHeight);
             // Offset to draw the second texture, when necessary.
-            textureSize = new Vector2(-400, 500);
+            textureSize = new Vector2(80, 720);
         }
         public void Update(float deltaX,float deltaY,string isX, GraphicsDeviceManager graphics)
         {
@@ -62,7 +62,7 @@ namespace Game4.PlayersAndClasses
         public void Draw(SpriteBatch batch)
         {
             // Draw the texture, if it is still onscreen.
-            if (screenpos.X < screenWidth)
+            if (screenpos.X < screenHeight)
             {
                 batch.Draw(mytexture, screenpos, null,
                      Color.White, 0, origin, 1, SpriteEffects.None, 0f);

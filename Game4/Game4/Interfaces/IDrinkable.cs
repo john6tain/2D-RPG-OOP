@@ -1,4 +1,4 @@
-﻿namespace Game4.Interfaces
+﻿namespace RPGGame.Interfaces
 {
 	public interface IDrinkable
 	{

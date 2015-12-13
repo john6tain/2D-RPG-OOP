@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game4.PlayersAndClasses;
+using RPGGame.PlayersAndClasses;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game4.Players
+namespace RPGGame.Players
 {
     public abstract class Ability
     {

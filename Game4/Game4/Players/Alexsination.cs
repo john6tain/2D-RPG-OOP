@@ -1,4 +1,4 @@
-﻿using Game4.Players;
+﻿using RPGGame.Players;
 using Microsoft.Xna.Framework.Graphics;
 
 /// <summary>
@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 /// </summary>
 
 
-namespace Game4.PlayersAndClasses
+namespace RPGGame.PlayersAndClasses
 {
     public class Alexsination : Player
     {

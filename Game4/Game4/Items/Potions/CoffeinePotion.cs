@@ -1,8 +1,8 @@
-﻿using Game4.Interfaces;
-using Game4.PlayersAndClasses;
+﻿using RPGGame.Interfaces;
+using RPGGame.PlayersAndClasses;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game4.Items.Potions
+namespace RPGGame.Items.Potions
 {
 	public class CoffeinePotion : Item, IDrinkable
 	{

@@ -1,12 +1,12 @@
-﻿using Game4.Interfaces;
-using Game4.PlayersAndClasses;
+﻿using RPGGame.Interfaces;
 using Microsoft.Xna.Framework.Graphics;
+using RPGGame.PlayersAndClasses;
 
 /// <summary>
 /// HealthPotion
 /// </summary>
 
-namespace Game4.Items.Potions
+namespace RPGGame.Items.Potions
 {
 	public class HealthPotion : Item, IDrinkable
 	{

@@ -1,9 +1,10 @@
 ﻿using System.Security.Cryptography.X509Certificates;
-using Game4.Interfaces;
-using Game4.PlayersAndClasses;
-using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Interfaces;
 
-namespace Game4.Items.Potions
+using Microsoft.Xna.Framework.Graphics;
+using RPGGame.PlayersAndClasses;
+
+namespace RPGGame.Items.Potions
 {
 	public class DamagePotion : Item, IDrinkable
 	{

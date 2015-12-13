@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game4.PlayersAndClasses
+namespace RPGGame.PlayersAndClasses
 {
     public abstract class Item
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game4
+namespace RPGGame
 {
 #if WINDOWS || LINUX
 	/// <summary>
@@ -14,7 +14,7 @@ namespace Game4
 		[STAThread]
 		static void Main()
 		{
-			using (var game = new Menu())
+			using (var game = new Engine.Engine())
 			{
 				game.Run();
 			}

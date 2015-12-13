@@ -1,5 +1,6 @@
-﻿using Game4.Players;
+﻿using RPGGame.Players;
 using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Players;
 
 /// <summary>
 /// Marto made this class
@@ -7,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 /// #Focus
 /// </summary>
 
-namespace Game4.PlayersAndClasses
+namespace RPGGame.PlayersAndClasses
 {
     public class ChichoMitko : Player
     {
