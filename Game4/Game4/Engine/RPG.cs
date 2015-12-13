@@ -80,7 +80,7 @@ namespace RPGGame
         public void Update(GameTime gameTime)
         {
 
-          /*  if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+         /*  if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);

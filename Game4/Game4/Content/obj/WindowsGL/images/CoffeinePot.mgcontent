@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/CoffeinePot.png</SourceFile>
-  <SourceTime>2015-12-11T14:39:10.9690476+02:00</SourceTime>
+  <SourceTime>2015-12-13T13:08:48.4461642+02:00</SourceTime>
   <DestFile>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/CoffeinePot.xnb</DestFile>
-  <DestTime>2015-12-11T17:49:41.5974719+02:00</DestTime>
+  <DestTime>2015-12-13T13:14:25.0591911+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

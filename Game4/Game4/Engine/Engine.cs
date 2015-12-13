@@ -11,43 +11,54 @@ namespace RPGGame.Engine
 {
     class Engine : Game
     {
-        private Texture2D background;
-        private Texture2D options;
-        private Texture2D play;
-        private Texture2D quit;
-        private SpriteBatch spriteBatch;
         private GraphicsDeviceManager graphics;
-        private Texture2D[] allPics;
-        private ScrollingBackground myBackground;
-        private Menu main;
-        private RPG rpg;
-        private Texture2D Pic;
-        private Texture2D Pic2;
+        private SpriteBatch spriteBatch;
+        /*   private Texture2D background;
+           private Texture2D options;
+           private Texture2D play;
+           private Texture2D quit;
+           private SpriteBatch spriteBatch;
+           private GraphicsDeviceManager graphics;
+           private Texture2D[] allPics;
+           private ScrollingBackground myBackground;
+           private Menu main;
+           private RPG rpg;
+           private Texture2D Pic;
+           private Texture2D Pic2;*/
 
-        public Engine()
-        {
-            graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-            Content.RootDirectory = "Content";
-            allPics = new Texture2D[4];
-            // Set devallPicsice frame rate to 30 fps.
-            TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
-            this.nextContent = false;
+           public Engine()
+           {
+               graphics = new GraphicsDeviceManager(this);
+               Content.RootDirectory = "Content";
+             //  allPics = new Texture2D[4];
+               // Set devallPicsice frame rate to 30 fps.
+               TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
+          //  
+
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
-        protected override void LoadContent()
+        protected override void Initialize()
         {
+            this.IsMouseVisible = true;
+           this.graphics.IsFullScreen = true;
+            graphics.PreferredBackBufferHeight = 2000;// GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            graphics.PreferredBackBufferWidth = 2000; //GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            graphics.ApplyChanges();
+     //       base.Initialize();
+        }
+
+        protected  void LoadContent()
+        {
+
+            StateManager.Instance.LoadContent(Content);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            /*
             if (nextContent)
             {
                 this.graphics.IsFullScreen = true;
                 // change these names to the names of your images
                 // Create a new SpriteBatch, which can be used to draw textures.
-                spriteBatch = new SpriteBatch(GraphicsDevice);
+              
                 myBackground = new ScrollingBackground();
                 Texture2D background = Content.Load<Texture2D>("images/firstmap");
 
@@ -72,21 +83,21 @@ namespace RPGGame.Engine
 
                 background = Content.Load<Texture2D>("images/fire");
 
-                spriteBatch = new SpriteBatch(GraphicsDevice);
+                
                 play = Content.Load<Texture2D>("images/play");
                 options = Content.Load<Texture2D>("images/options");
                 quit = Content.Load<Texture2D>("images/exit");
                 main = new Menu(background, options, play, quit, this.spriteBatch, this.graphics,
                     new Microsoft.Xna.Framework.Media.MediaLibrary());
-            }
-    }
+            }*/
+        }
         protected override void UnloadContent()
         {
-           Content.Unload();
+          StateManager.Instance.UnloadCOntent();
             
         }
 
-        public bool nextContent { get; set; }
+
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -95,7 +106,8 @@ namespace RPGGame.Engine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            IsMouseVisible = true;
+            StateManager.Instance.Update(gameTime);
+           /* IsMouseVisible = true;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
@@ -105,7 +117,7 @@ namespace RPGGame.Engine
             {
                 Content.Unload();
                  this.nextContent = true;
-                 //this.rpg.Update(gameTime);
+                this.rpg.Update(gameTime);
                 //   UnloadContent();
                  this.LoadContent();
             }
@@ -132,19 +144,10 @@ namespace RPGGame.Engine
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.Black);
-            if (nextContent)
-            {
-                rpg.Draw(gameTime);
-            }
-            else
-            {
-                main.Draw(gameTime);
-            }
-
-
-
+        {   
+           // spriteBatch.Begin();
+            StateManager.Instance.Draw(gameTime);
+           // spriteBatch.End();
             base.Draw(gameTime);
         }
     }
