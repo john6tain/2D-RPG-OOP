@@ -1,61 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Content;
+using RpgGame;
 
 namespace RPGGame.Engine
 {
     public class StateManager
     {
-        private static StateManager instance;
+        private State currentState;
+      
 
         public StateManager()
         {
-
-            Demementions = new Vector2(100, 100);/*GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height,
-                                       GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width);*/
-
+               currentState = new RPG();
         }
 
-        public Vector2 Demementions { get; private set; }
-
-        public static StateManager Instance
+        public State CurrentState
         {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new StateManager();
-                }
-                return instance;
-            }
+            get { return this.currentState; }
+            set { this.currentState = value; }
         }
-
-        public void UnloadCOntent()
-        {
-
-        }
-
-        public void Update(GameTime gameTime)
-        {
-
-        }
-
-        public void LoadContent(ContentManager content)
-        {
-            this.Content = new ContentManager(content.ServiceProvider, "Content");
-
-        }
-
-        public void Draw(GameTime gameTime)
-        {
-
-        }
-
-        public ContentManager Content { get; set; }
     }
 }

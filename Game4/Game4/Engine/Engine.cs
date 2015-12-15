@@ -13,6 +13,9 @@ namespace RPGGame.Engine
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+
+        private StateManager stateManager;
+        public static ContentLoader ContentLoader;
         /*   private Texture2D background;
            private Texture2D options;
            private Texture2D play;
@@ -25,33 +28,32 @@ namespace RPGGame.Engine
            private RPG rpg;
            private Texture2D Pic;
            private Texture2D Pic2;*/
-
-           public Engine()
-           {
-               graphics = new GraphicsDeviceManager(this);
-               Content.RootDirectory = "Content";
-             //  allPics = new Texture2D[4];
-               // Set devallPicsice frame rate to 30 fps.
-               TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
-          //  
+        public  static GraphicsDeviceManager Graphics { private get; set; }
+        public Engine()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+            //  allPics = new Texture2D[4];
+            // Set devallPicsice frame rate to 30 fps.
+            TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
+            ContentLoader = new ContentLoader(this.Content);
+            //  
 
         }
 
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
-           this.graphics.IsFullScreen = true;
-            graphics.PreferredBackBufferHeight = 2000;// GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            graphics.PreferredBackBufferWidth = 2000; //GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            this.graphics.IsFullScreen = true;
+            this.stateManager = new StateManager();
             graphics.ApplyChanges();
-     //       base.Initialize();
+            base.Initialize();
         }
 
-        protected  void LoadContent()
+        protected override void LoadContent()
         {
-
-            StateManager.Instance.LoadContent(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            base.LoadContent();
             /*
             if (nextContent)
             {
@@ -75,30 +77,14 @@ namespace RPGGame.Engine
                 
             }
             else
-            {
-                this.graphics.PreferredBackBufferWidth  = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-                this.graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-                this.graphics.IsFullScreen = true;
+            {*/
 
 
-                background = Content.Load<Texture2D>("images/fire");
-
-                
-                play = Content.Load<Texture2D>("images/play");
-                options = Content.Load<Texture2D>("images/options");
-                quit = Content.Load<Texture2D>("images/exit");
-                main = new Menu(background, options, play, quit, this.spriteBatch, this.graphics,
-                    new Microsoft.Xna.Framework.Media.MediaLibrary());
-            }*/
         }
         protected override void UnloadContent()
         {
-          StateManager.Instance.UnloadCOntent();
-            
+
         }
-
-
-
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -106,48 +92,38 @@ namespace RPGGame.Engine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            StateManager.Instance.Update(gameTime);
-           /* IsMouseVisible = true;
+            // StateManager.Instance.Update(gameTime);
+            IsMouseVisible = true;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-                Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Keyboard.GetState().IsKeyDown(Keys.Escape)||this.stateManager.CurrentState.IsExited())
                 Exit();
-            this.main.Update(gameTime,new Vector2(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height,
-                                                  GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width));
-            if (main.StartGame)
-            {
-                Content.Unload();
-                 this.nextContent = true;
-                this.rpg.Update(gameTime);
-                //   UnloadContent();
-                 this.LoadContent();
-            }
-            if (main.IsExited)
-            {
-                Exit();
-            }
-            
-            /*one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);
-            two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down }, ref myBackground, this.graphics, allPics);
-            one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            two.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 52);
-            sourceRectTwo = new Rectangle(30 * two.Frame, 0, 30, 52);
 
-            //  myBackground.Update(one.Frame*2);*/
+            this.stateManager.CurrentState.Update(gameTime);
+
+
+             /*one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);
+             two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down }, ref myBackground, this.graphics, allPics);
+             one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+             two.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+             sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 52);
+             sourceRectTwo = new Rectangle(30 * two.Frame, 0, 30, 52);
+
+             //  myBackground.Update(one.Frame*2);*/
 
             base.Update(gameTime);
 
-            }
+        }
 
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
-        {   
-           // spriteBatch.Begin();
-            StateManager.Instance.Draw(gameTime);
-           // spriteBatch.End();
+        {
+            GraphicsDevice.Clear(Color.LightBlue);
+            spriteBatch.Begin();
+            this.stateManager.CurrentState.Draw(this.spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

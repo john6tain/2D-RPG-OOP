@@ -41,9 +41,11 @@
     <StartupObject>RPGGame.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ContentLoader.cs" />
     <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\State.cs" />
     <Compile Include="Engine\StateManager.cs" />
-    <Compile Include="GameMenu\Menu.cs" />
+    <Compile Include="GameMenu\MenuState.cs" />
     <Compile Include="Engine\RPG.cs" />
     <Compile Include="Interfaces\IDrinkable.cs" />
     <Compile Include="Items\Potions\CoffeinePotion.cs" />

@@ -3,6 +3,7 @@ using RPGGame.PlayersAndClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using RPGGame.Engine;
 
 namespace RPGGame
 {
@@ -11,27 +12,24 @@ namespace RPGGame
     /// </summary>
     /// 
    //http://www.deviantart.com/tag/rpgsprite
-    public class RPG 
+    public class RPG : State
     {
 
         private Rectangle sourceRectOne;
         private Rectangle sourceRectTwo;
         private ScrollingBackground myBackground;
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
         private Texture2D[] allPics;
         Player one;
         Player two;
-        public RPG(ScrollingBackground myBackground,GraphicsDeviceManager graphics,SpriteBatch spriteBatch,Texture2D[] allPics, Texture2D onePic, Texture2D twoPic)
+        public RPG()
         {
-            this.allPics = allPics;
-            this.graphics = graphics;
-            this.myBackground = myBackground;
-            one = new Programmer(graphics.PreferredBackBufferWidth - 80, graphics.PreferredBackBufferHeight - 50);
+            Initialize();
+            one = new Programmer(0, 0);
             two = new Alexsination(1000, 0);
-            one.Pic = onePic;
-            two.Pic = twoPic;
+
         }
+
+
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -45,28 +43,24 @@ namespace RPGGame
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-      /*  protected void LoadContent()
+        private void Initialize()
         {
-            this.graphics.IsFullScreen = true;
-            // change these names to the names of your images
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            myBackground = new ScrollingBackground();
-            Texture2D background = Content.Load<Texture2D>("images/firstmap");
+            //myBackground = new ScrollingBackground();
+            //Texture2D background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/firstmap");
 
-            myBackground.Load(GraphicsDevice, background);
+         //   myBackground.Load(Engine.Engine.Graphics, background);
             string[] imageNames = { "images/up", "images/down", "images/left", "images/pr" };
 
-            for (int i = 0; i < imageNames.Length; i++)
+          /*  for (int i = 0; i < imageNames.Length; i++)
             {
-                allPics[i] = Content.Load<Texture2D>(imageNames[i]);
-            }
-            one.Pic = Content.Load<Texture2D>(imageNames[0]);
-            two.Pic = Content.Load<Texture2D>(imageNames[0]);
-
+                allPics[i] = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[i]);
+            }*/
+       /*     one.Pic = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[0]);
+            two.Pic = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[0]);
+            */
 
             // TODO: use this.Content to load your game content here
-        }*/
+        }
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -77,10 +71,10 @@ namespace RPGGame
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
 
-         /*  if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+       /*    if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);
@@ -96,17 +90,20 @@ namespace RPGGame
 
         }
 
+        public override bool IsExited()
+        {
+            return false;
+        }
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Draw(GameTime gameTime)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
-            myBackground.Draw(spriteBatch);
-            spriteBatch.Draw(one.Pic, new Rectangle((int)one.X, (int)one.Y, 60, 60), sourceRectOne, Color.White);
-            spriteBatch.Draw(two.Pic, new Rectangle((int)two.X, (int)two.Y, 60, 60), sourceRectTwo, Color.White);
-            spriteBatch.End();
+           // myBackground.Draw(spriteBatch);
+           // spriteBatch.Draw(one.Pic, new Rectangle((int)one.X, (int)one.Y, 60, 60), sourceRectOne, Color.White);
+            //spriteBatch.Draw(two.Pic, new Rectangle((int)two.X, (int)two.Y, 60, 60), sourceRectTwo, Color.White);
         }
 
     }
