@@ -47,8 +47,9 @@ namespace RpgGame
                 &&(new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50,(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70)
                .Contains(mousePosition)))
             {
-                /* player.controls.stop();
-                 this.StartGame = true;*/
+                 mplayer.controls.stop();
+                
+               //  this.StartGame = true;*/
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
             {
@@ -81,12 +82,14 @@ namespace RpgGame
 
         }
         #region Initialize
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to Load
         /// game-specific content.
         /// </summary>
         private void Initialize()
         {
+       
             this.background = Engine.ContentLoader.Content.Load<Texture2D>("images/fire");
             this.play = Engine.ContentLoader.Content.Load<Texture2D>("images/play");
             this.options = Engine.ContentLoader.Content.Load<Texture2D>("images/options");

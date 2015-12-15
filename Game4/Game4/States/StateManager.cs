@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using RPGGame.States;
+using Microsoft.Xna.Framework.Content;
 using RpgGame;
 
 namespace RPGGame.Engine
@@ -10,7 +11,7 @@ namespace RPGGame.Engine
 
         public StateManager()
         {
-               currentState = new RPG();
+              currentState = new MenuState();
         }
 
         public State CurrentState

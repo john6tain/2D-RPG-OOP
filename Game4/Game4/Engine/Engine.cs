@@ -93,10 +93,10 @@ namespace RPGGame.Engine
         protected override void Update(GameTime gameTime)
         {
             // StateManager.Instance.Update(gameTime);
-            IsMouseVisible = true;
+           /* IsMouseVisible = true;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape)||this.stateManager.CurrentState.IsExited())
-                Exit();
+                Exit();*/
 
             this.stateManager.CurrentState.Update(gameTime);
 

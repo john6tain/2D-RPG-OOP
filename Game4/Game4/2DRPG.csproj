@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="ContentLoader.cs" />
     <Compile Include="Engine\Engine.cs" />
-    <Compile Include="Engine\State.cs" />
-    <Compile Include="Engine\StateManager.cs" />
-    <Compile Include="GameMenu\MenuState.cs" />
-    <Compile Include="Engine\RPG.cs" />
+    <Compile Include="Engine\InputHandler.cs" />
+    <Compile Include="States\GameState.cs" />
+    <Compile Include="States\State.cs" />
+    <Compile Include="States\StateManager.cs" />
+    <Compile Include="States\MenuState.cs" />
+    <Compile Include="States\Main.cs" />
     <Compile Include="Interfaces\IDrinkable.cs" />
     <Compile Include="Items\Potions\CoffeinePotion.cs" />
     <Compile Include="Items\Potions\DamagePotion.cs" />
@@ -64,7 +66,7 @@
     <Compile Include="Items\Trinket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GameMenu\Options.cs" />
+    <Compile Include="States\Options.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
@@ -93,7 +95,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GameMenu\" />
+  </ItemGroup>
   <!-- Specify the search path explicitly so the ResolveAssemblyReferences task picks the right ones -->
   <Target Name="BeforeResolveReferences">
     <CreateProperty Value="$(MSBuildProgramFiles32)\MonoGame\v3.0\Assemblies\Windows;$(AssemblySearchPaths)">
