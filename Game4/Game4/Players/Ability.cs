@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using RPGGame.PlayersAndClasses;
 using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Items;
 
 namespace RPGGame.Players
 {

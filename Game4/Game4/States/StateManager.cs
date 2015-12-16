@@ -1,8 +1,4 @@
-﻿using RPGGame.States;
-using Microsoft.Xna.Framework.Content;
-using RpgGame;
-
-namespace RPGGame.Engine
+﻿namespace RPGGame.States
 {
     public class StateManager
     {

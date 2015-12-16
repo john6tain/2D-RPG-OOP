@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using RPGGame.PlayersAndClasses;
+using RPGGame.States;
 
 namespace RPGGame.Engine
 {
@@ -18,8 +19,14 @@ namespace RPGGame.Engine
         public static ContentLoader ContentLoader;
         public  static GraphicsDeviceManager Graphics { private get; set; }
         private InputHandler input;
+        private int elapsed;
+        private WMPLib.WindowsMediaPlayer mplayer;
+        public static bool exit;
+        public Camera camera;
+        private Player one;
         public Engine()
         {
+            one = new Programmer(1000,0);
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             ContentLoader = new ContentLoader(this.Content);
@@ -36,6 +43,9 @@ namespace RPGGame.Engine
             this.graphics.IsFullScreen = true;
             this.stateManager = new StateManager();
             graphics.ApplyChanges();
+
+            camera = new Camera(GraphicsDevice.Viewport,Vector2.Zero);
+            camera.Reset();
             base.Initialize();
 
         }
@@ -43,31 +53,8 @@ namespace RPGGame.Engine
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
             base.LoadContent();
-            /*
-            if (nextContent)
-            {
-                this.graphics.IsFullScreen = true;
-                // change these names to the names of your images
-                // Create a new SpriteBatch, which can be used to draw textures.
-              
-                myBackground = new ScrollingBackground();
-                Texture2D background = Content.Load<Texture2D>("images/firstmap");
-
-                myBackground.Load(GraphicsDevice, background);
-                string[] imageNames = { "images/up", "images/down", "images/left", "images/pr" };
-
-                for (int i = 0; i < imageNames.Length; i++)
-                {
-                    allPics[i] = Content.Load<Texture2D>(imageNames[i]);
-                }
-                Pic = Content.Load<Texture2D>(imageNames[0]);
-                Pic2 = Content.Load<Texture2D>(imageNames[0]); 
-                rpg = new RPG(myBackground, graphics, spriteBatch, allPics, Pic, Pic2);
-                
-            }
-            else
-            {*/
 
 
         }
@@ -77,13 +64,19 @@ namespace RPGGame.Engine
         {
 
             this.stateManager.CurrentState.Update(gameTime);
-
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.Escape) || this.stateManager.CurrentState.IsExited())
+            camera.Update(gameTime,one);
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.Escape) || MenuState.stopMenu)
             {
                  Exit();
             }
+            input.MouseMovement();
             input.CheckForKeyboardInput(stateManager);
-
+            if (Keyboard.GetState().IsKeyDown(Keys.B))
+            {
+                
+               // camera.View = new Viewport(700, 100, 30, 30);
+            }
+           
 
              /*one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);
              two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down }, ref myBackground, this.graphics, allPics);
@@ -105,7 +98,7 @@ namespace RPGGame.Engine
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.LightBlue);
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null, null, null, null,camera.Transform);
             this.stateManager.CurrentState.Draw(this.spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

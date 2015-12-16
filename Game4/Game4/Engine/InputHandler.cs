@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using RpgGame;
+using OpenTK.Graphics.OpenGL;
 using RPGGame.Engine;
 using RPGGame.Engine;
+using RPGGame.Players;
 using RPGGame.States;
 
 namespace RPGGame.Engine
@@ -12,6 +15,8 @@ namespace RPGGame.Engine
     {
         private GraphicsDeviceManager graphics;
         private MenuState menu;
+        private StateManager stateManager;
+
         public InputHandler(GraphicsDeviceManager graphics)
         {
             this.graphics = graphics;
@@ -19,6 +24,7 @@ namespace RPGGame.Engine
 
         public void CheckForKeyboardInput(StateManager stateManager)
         {
+            this.stateManager = stateManager;
             if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
             {
                 this.graphics.PreferredBackBufferWidth = 1280;
@@ -26,11 +32,10 @@ namespace RPGGame.Engine
                 this.graphics.ToggleFullScreen();
                 this.graphics.ApplyChanges();
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Enter)||MenuState.Next)
+          /*  else if (Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
-                stateManager.CurrentState = new GameState(graphics);
-            }
-            
+                
+            }*/
         }
 
         public void PlayerMovement(Player player)//TODO: this shit
@@ -38,7 +43,7 @@ namespace RPGGame.Engine
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
                 player.IsMovingUp = true;
-                Console.Beep();
+               // Console.Beep();
 
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
@@ -52,6 +57,30 @@ namespace RPGGame.Engine
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                player.IsMovingRight = true;
+            }
+
+        }
+
+        public void MouseMovement( )
+        {
+
+          
+            var mouseState = Mouse.GetState();
+            var mousePosition = new Point(mouseState.X, mouseState.Y);
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter) || mouseState.LeftButton == ButtonState.Pressed
+                && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70).Contains(mousePosition)))
+            {
+                
+              //  mplayer.controls.stop();
+                this.stateManager.CurrentState = new GameState(graphics);
+            }
+            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
+            {
+                Mouse.SetPosition(0, 0);
+            }
+            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2), 100, 70).Contains(mousePosition)))
+            {
+                MenuState.stopMenu = true;
             }
 
         }

@@ -1,14 +1,10 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
-using Game4;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using RPGGame;
 using RPGGame.Engine;
 
-namespace RpgGame
+namespace RPGGame.States
 {
     public class MenuState : State
     {
@@ -24,6 +20,8 @@ namespace RpgGame
         private bool isNext;
         private WMPLib.WindowsMediaPlayer mplayer;
         public static bool Next;
+
+        public static bool stopMenu;
         public MenuState()
         {
             Initialize();
@@ -31,9 +29,9 @@ namespace RpgGame
             mplayer = new WMPLib.WindowsMediaPlayer();
             Directory.GetCurrentDirectory();
             mplayer.URL = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase) + @"\Content\songs\menu.mp3";
-            mplayer.settings.setMode("loop", true);
+            mplayer.settings.setMode("loop", false);
             mplayer.controls.play();
-            
+            stopMenu = false;
         }
 
         public override bool IsExited()
@@ -43,25 +41,9 @@ namespace RpgGame
 
         public override void Update(GameTime gameTime)
         {
+            
             elapsed += gameTime.ElapsedGameTime.Milliseconds;
-            var mouseState = Mouse.GetState();
-            var mousePosition = new Point(mouseState.X, mouseState.Y);
-
-
-            if (mouseState.LeftButton == ButtonState.Pressed 
-                &&(new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50,(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70).Contains(mousePosition)))
-            {
-                 mplayer.controls.stop();
-                Next = true;
-            }
-            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
-            {
-                Mouse.SetPosition(0, 0);
-            }
-            if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2), 100, 70).Contains(mousePosition)))
-            {
-                isExited = true;
-            }
+           // inputHandler.MouseMovement();
             if (elapsed >= 200)
             {
                 if (frame >= 2)
@@ -75,7 +57,9 @@ namespace RpgGame
 
                 elapsed = 0;
             }
-            sourceRect = new Rectangle(100 * frame, 0, 640, 250);
+            
+           sourceRect = new Rectangle(100 * frame, 0, 640, 250);
+
 
         }
         #region Initialize
@@ -86,10 +70,10 @@ namespace RpgGame
         /// </summary>
         private void Initialize()
         {
-            this.background = Engine.ContentLoader.Content.Load<Texture2D>("images/fire");
-            this.play = Engine.ContentLoader.Content.Load<Texture2D>("images/play");
-            this.options = Engine.ContentLoader.Content.Load<Texture2D>("images/options");
-            this.quit = Engine.ContentLoader.Content.Load<Texture2D>("images/exit");
+            this.background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/fire");
+            this.play = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/play");
+            this.options = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/options");
+            this.quit = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/exit");
         }
 
         #endregion

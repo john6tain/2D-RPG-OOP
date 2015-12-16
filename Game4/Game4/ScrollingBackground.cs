@@ -36,7 +36,7 @@ namespace RPGGame.PlayersAndClasses
         public void Update(float deltaX,float deltaY,string isX, GraphicsDeviceManager graphics)
         {
            
-                if (isX == "x") //left
+           /*     if (isX == "x") //left
                 {
                     screenpos.X += deltaX;
                     screenpos.X = screenpos.X%mytexture.Width;
@@ -56,7 +56,7 @@ namespace RPGGame.PlayersAndClasses
             {
                 screenpos.Y -= deltaY;
                 screenpos.Y = screenpos.Y % mytexture.Height;
-            }
+            }*/
         }
 
         public void Draw(SpriteBatch batch)

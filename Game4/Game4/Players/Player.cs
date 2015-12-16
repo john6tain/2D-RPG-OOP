@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using RPGGame.Engine;
 using RPGGame.Players;
 using RPGGame.PlayersAndClasses;
@@ -25,10 +26,12 @@ namespace RPGGame
         protected double life;
         protected Ability myAbility;
         private string pos;
+
         //TODO :  class weapon
         #endregion
 
         #region Properties
+
         /// <summary>
         /// Properties
         /// </summary>
@@ -153,21 +156,20 @@ namespace RPGGame
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
         /// <param name="backgroundElapsed"></param>
-        public void Moving(Keys[] keyses, ref ScrollingBackground background, GraphicsDeviceManager graphics, Texture2D[] pics)
+        public void Moving( GraphicsDeviceManager graphics, Texture2D[] pics)
         {
-
+            var keyses = new Keys[]{Keys.A, Keys.D, Keys.W, Keys.S};
 
             if (IsMovingLeft) //left
             {
 
-                if (background.Screenpos.X < (graphics.PreferredBackBufferWidth - 80))
+            /*   if (camera.SavedPosition.X < (graphics.PreferredBackBufferWidth - 80))
+               {
+                   camera.Update(gameTime, this);
+               }*/
+                 if(x > 0)
                 {
-                    background.Update(2, 0, "x", graphics);
-                }
-                else if(x > 0)
-                {
-
-                    x-=2;
+                    x-=1;
                 }
                 if (this.Elapsed >= this.Delay)
                 {
@@ -185,15 +187,16 @@ namespace RPGGame
                 this.Pos = "left";
                 this.pic = null;
                 this.pic = pics[2];
+                IsMovingLeft = false;
             }
             if (IsMovingRight) //right
             {
-                if (background.Screenpos.X >(graphics.PreferredBackBufferWidth/2)-480)
+              /*  if (background.Screenpos.X >(graphics.PreferredBackBufferWidth/2)-480)
                 {
 
                     background.Update(2f,0,"-x", graphics);
-                }
-                else if (x < 1300)
+                }*/
+                 if (x < 1300)
                 {
                     x += 2;
                 }
@@ -213,19 +216,19 @@ namespace RPGGame
                 }
                 this.Pos = "right";
                 this.pic = null;
-                this.pic = pics[3];
+                this.pic = pics[3]; IsMovingRight = false;
             }
             if (IsMovingUp) //up
             {
               /*  if (background.Screenpos.Y <490)
                 {*/
-                      y -= 0.5;
-                    background.Update(0, 2, "y", graphics);
-           /*     }
-                else if(y > 10)
+                     // y -= 0.5;
+                 //   background.Update(0, 2, "y", graphics);
+           /*     }*/
+                 if(y > 10)
                 {
                         y -= 2;
-                }*/
+                }
                 if (elapsed >= delay)
                 {
                     if (this.frame >= 1)
@@ -242,17 +245,18 @@ namespace RPGGame
                 this.Pos = "up";
                 this.pic = null;
                 this.pic = pics[0];
+                IsMovingUp = false;
 
             }
             if (IsMovingDown) //down
             {
-                if (background.Screenpos.Y  > (graphics.PreferredBackBufferHeight+100)*-1)
+              /*  if (background.Screenpos.Y  > (graphics.PreferredBackBufferHeight+100)*-1)
                 {
                     y+=0.5;
                     background.Update(0, 2, "-y", graphics);
                     
-                }
-                else if (y < 700)
+                }*/
+                 if (y < 700)
                 {
                     y += 2;
                 }
@@ -272,6 +276,7 @@ namespace RPGGame
                 this.Pos = "down";
                 this.pic = null;
                 this.pic = pics[1];
+                IsMovingDown = false;
             }
         }
         #endregion
