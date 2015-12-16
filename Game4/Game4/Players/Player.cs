@@ -109,6 +109,11 @@ namespace RPGGame
 
         }
 
+        public bool IsMovingUp { get; set; }
+        public bool IsMovingDown { get; set; }
+        public bool IsMovingLeft { get; set; }
+        public bool IsMovingRight { get; set; }
+
         #endregion
 
         #region Constructor
@@ -136,6 +141,7 @@ namespace RPGGame
             this.Delay = 100f;
             this.Frame = 0;
             this.Elapsed = 0;
+            this.IsMovingUp = false;
         }
 
         #endregion
@@ -147,11 +153,11 @@ namespace RPGGame
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
         /// <param name="backgroundElapsed"></param>
-        public void Moving(PlayerIndex playerIndex, Keys[] keyses, ref ScrollingBackground background, GraphicsDeviceManager graphics, Texture2D[] pics)
+        public void Moving(Keys[] keyses, ref ScrollingBackground background, GraphicsDeviceManager graphics, Texture2D[] pics)
         {
 
 
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0])) //left
+            if (IsMovingLeft) //left
             {
 
                 if (background.Screenpos.X < (graphics.PreferredBackBufferWidth - 80))
@@ -180,7 +186,7 @@ namespace RPGGame
                 this.pic = null;
                 this.pic = pics[2];
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1])) //right
+            if (IsMovingRight) //right
             {
                 if (background.Screenpos.X >(graphics.PreferredBackBufferWidth/2)-480)
                 {
@@ -209,7 +215,7 @@ namespace RPGGame
                 this.pic = null;
                 this.pic = pics[3];
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
+            if (IsMovingUp) //up
             {
               /*  if (background.Screenpos.Y <490)
                 {*/
@@ -238,7 +244,7 @@ namespace RPGGame
                 this.pic = pics[0];
 
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
+            if (IsMovingDown) //down
             {
                 if (background.Screenpos.Y  > (graphics.PreferredBackBufferHeight+100)*-1)
                 {

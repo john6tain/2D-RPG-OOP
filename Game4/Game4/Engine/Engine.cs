@@ -16,28 +16,17 @@ namespace RPGGame.Engine
 
         private StateManager stateManager;
         public static ContentLoader ContentLoader;
-        /*   private Texture2D background;
-           private Texture2D options;
-           private Texture2D play;
-           private Texture2D quit;
-           private SpriteBatch spriteBatch;
-           private GraphicsDeviceManager graphics;
-           private Texture2D[] allPics;
-           private ScrollingBackground myBackground;
-           private Menu main;
-           private RPG rpg;
-           private Texture2D Pic;
-           private Texture2D Pic2;*/
         public  static GraphicsDeviceManager Graphics { private get; set; }
+        private InputHandler input;
         public Engine()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            //  allPics = new Texture2D[4];
-            // Set devallPicsice frame rate to 30 fps.
-            TargetElapsedTime = TimeSpan.FromSeconds(1 / 30.0);
             ContentLoader = new ContentLoader(this.Content);
-            //  
+            input = new InputHandler(graphics);
+            this.graphics.PreferredBackBufferWidth = 1920;
+            this.graphics.PreferredBackBufferHeight = 1080;
+            this.graphics.ApplyChanges();
 
         }
 
@@ -48,6 +37,7 @@ namespace RPGGame.Engine
             this.stateManager = new StateManager();
             graphics.ApplyChanges();
             base.Initialize();
+
         }
 
         protected override void LoadContent()
@@ -81,24 +71,18 @@ namespace RPGGame.Engine
 
 
         }
-        protected override void UnloadContent()
-        {
 
-        }
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+
         protected override void Update(GameTime gameTime)
         {
-            // StateManager.Instance.Update(gameTime);
-           /* IsMouseVisible = true;
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-                Keyboard.GetState().IsKeyDown(Keys.Escape)||this.stateManager.CurrentState.IsExited())
-                Exit();*/
 
             this.stateManager.CurrentState.Update(gameTime);
+
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.Escape) || this.stateManager.CurrentState.IsExited())
+            {
+                 Exit();
+            }
+            input.CheckForKeyboardInput(stateManager);
 
 
              /*one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);

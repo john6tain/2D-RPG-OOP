@@ -19,8 +19,11 @@ namespace RpgGame
         private int elapsed = 0;
         private int frame = 0;
         private Rectangle sourceRect;
+        public static InputHandler inputHandler;
         private bool isExited = false;
+        private bool isNext;
         private WMPLib.WindowsMediaPlayer mplayer;
+        public static bool Next;
         public MenuState()
         {
             Initialize();
@@ -30,12 +33,14 @@ namespace RpgGame
             mplayer.URL = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase) + @"\Content\songs\menu.mp3";
             mplayer.settings.setMode("loop", true);
             mplayer.controls.play();
+            
         }
 
         public override bool IsExited()
         {
             return isExited;
         }
+
         public override void Update(GameTime gameTime)
         {
             elapsed += gameTime.ElapsedGameTime.Milliseconds;
@@ -44,26 +49,18 @@ namespace RpgGame
 
 
             if (mouseState.LeftButton == ButtonState.Pressed 
-                &&(new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50,(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70)
-               .Contains(mousePosition)))
+                &&(new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50,(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70).Contains(mousePosition)))
             {
                  mplayer.controls.stop();
-                
-               //  this.StartGame = true;*/
+                Next = true;
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
             {
-                /// Options op = new Options();
-
-
                 Mouse.SetPosition(0, 0);
-
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2), 100, 70).Contains(mousePosition)))
             {
-
                 isExited = true;
-                // throw new ArgumentException("exit");
             }
             if (elapsed >= 200)
             {
@@ -89,7 +86,6 @@ namespace RpgGame
         /// </summary>
         private void Initialize()
         {
-       
             this.background = Engine.ContentLoader.Content.Load<Texture2D>("images/fire");
             this.play = Engine.ContentLoader.Content.Load<Texture2D>("images/play");
             this.options = Engine.ContentLoader.Content.Load<Texture2D>("images/options");

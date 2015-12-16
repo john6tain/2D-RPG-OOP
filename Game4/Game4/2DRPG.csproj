@@ -48,7 +48,6 @@
     <Compile Include="States\State.cs" />
     <Compile Include="States\StateManager.cs" />
     <Compile Include="States\MenuState.cs" />
-    <Compile Include="States\Main.cs" />
     <Compile Include="Interfaces\IDrinkable.cs" />
     <Compile Include="Items\Potions\CoffeinePotion.cs" />
     <Compile Include="Items\Potions\DamagePotion.cs" />
