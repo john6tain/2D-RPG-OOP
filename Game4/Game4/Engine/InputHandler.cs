@@ -48,15 +48,15 @@ namespace RPGGame.Engine
                // Console.Beep();
 
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Down))
+             if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
                 player.IsMovingDown = true;
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Left))
+             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 player.IsMovingLeft = true;
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Right))
+             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                player.IsMovingRight = true;
             }
@@ -83,7 +83,7 @@ namespace RPGGame.Engine
             {
                 
                 MenuState.mplayer.controls.stop();
-                this.stateManager.CurrentState = new GameState(graphics,viewport);
+                this.stateManager.CurrentState = new GameState(graphics);
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
             {

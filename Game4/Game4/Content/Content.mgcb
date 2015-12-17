@@ -217,3 +217,9 @@
 /processorParam:TextureFormat=Color
 /build:images/up.png
 
+#begin MyFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:MyFont.spritefont
+

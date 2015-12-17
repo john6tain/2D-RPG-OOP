@@ -156,20 +156,15 @@ namespace RPGGame
         /// <param name="playerIndex"></param>
         /// <param name="keyses"></param>
         /// <param name="backgroundElapsed"></param>
-        public void Moving( GraphicsDeviceManager graphics, Texture2D[] pics)
+        public void Moving(Texture2D[] pics)
         {
-            var keyses = new Keys[]{Keys.A, Keys.D, Keys.W, Keys.S};
+            //var keyses = new Keys[]{Keys.A, Keys.D, Keys.W, Keys.S};
 
             if (IsMovingLeft) //left
             {
-
-            /*   if (camera.SavedPosition.X < (graphics.PreferredBackBufferWidth - 80))
-               {
-                   camera.Update(gameTime, this);
-               }*/
-                 if(x > 0)
+                 if(x > -2)//TODO:Moonwalk elapsed -100
                 {
-                    x-=2;
+                    x-=5;
                 }
                 if (this.Elapsed >= this.Delay)
                 {
@@ -182,17 +177,17 @@ namespace RPGGame
                         this.Frame++;
                     }
 
-                    this.Elapsed = 0;
+                    this.Elapsed = 0; //For moon walk use -100 Copyright:DCay
                 }
-                this.Pos = "left";
+                this.Pos = "right";
                 this.pic = null;
-                this.pic = pics[2];
+                this.pic = pics[3];
                 IsMovingLeft = false;
             }
             if (IsMovingRight) //right
             {
              
-                 if (x < 2800)
+                 if (x < 3700)
                 {
                     x += 2;
                 }
@@ -208,7 +203,7 @@ namespace RPGGame
                         frame++;
                     }
 
-                    elapsed = 0;
+                   elapsed = 0;
                 }
                 this.Pos = "right";
                 this.pic = null;
@@ -218,7 +213,7 @@ namespace RPGGame
             {
                  if(y > 10)
                 {
-                        y -= 2;
+                        y -= 5;
                 }
                 if (elapsed >= delay)
                 {
@@ -242,7 +237,7 @@ namespace RPGGame
             if (IsMovingDown) //down
             {
 
-                 if (y < 1700)
+                 if (y < 2000)
                 {
                     y += 2;
                 }

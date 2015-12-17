@@ -74,3 +74,4 @@ C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGam
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.pdb
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\RPGGame.exe
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\RPGGame.pdb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\MyFont.xnb

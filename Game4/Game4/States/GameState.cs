@@ -15,12 +15,11 @@ namespace RPGGame.States
         private Rectangle? sourceRect;
         private Texture2D[] allPics;
         private Rectangle sourceRectOne;
-        private ScrollingBackground myBackground;
         private InputHandler input;
         public static int zoom =3;
         private SpriteFont Font1;
 
-        public GameState(GraphicsDeviceManager graphics, Viewport viewport)
+        public GameState(GraphicsDeviceManager graphics)
         {
             this.graphics = graphics;
             allPics = new Texture2D[4];
@@ -37,7 +36,7 @@ namespace RPGGame.States
             // Create a new SpriteBatch, which can be used to draw textures.
 
             //  myBackground = new ScrollingBackground();
-      //      Font1 = Engine.Engine.ContentLoader.Content.Load<SpriteFont>("Courier New");
+            Font1 = Engine.Engine.ContentLoader.Content.Load<SpriteFont>("MyFont");
 
             background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/firstmap");
 
@@ -59,7 +58,7 @@ namespace RPGGame.States
         {
             input.PlayerMovement(one);
 
-            one.Moving(this.graphics, allPics);
+            one.Moving( allPics);
 
             one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 52);
@@ -72,9 +71,9 @@ namespace RPGGame.States
 
             spriteBatch.Draw(one.Pic, new Rectangle((int)one.X, (int)one.Y, 60, 80), sourceRectOne, Color.White);
             spriteBatch.End();
-         /*   spriteBatch.Begin();
-            spriteBatch.DrawString(Font1, "da", new Microsoft.Xna.Framework.Vector2 (0,0),Color.Black);
-            spriteBatch.End();*/
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Font1, "Health", new Microsoft.Xna.Framework.Vector2 (0,0),Color.DarkRed);
+            spriteBatch.End();
         }
             public override bool IsExited()
         {
