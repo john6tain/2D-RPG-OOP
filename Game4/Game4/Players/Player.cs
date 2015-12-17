@@ -169,7 +169,7 @@ namespace RPGGame
                }*/
                  if(x > 0)
                 {
-                    x-=1;
+                    x-=2;
                 }
                 if (this.Elapsed >= this.Delay)
                 {
@@ -191,12 +191,8 @@ namespace RPGGame
             }
             if (IsMovingRight) //right
             {
-              /*  if (background.Screenpos.X >(graphics.PreferredBackBufferWidth/2)-480)
-                {
-
-                    background.Update(2f,0,"-x", graphics);
-                }*/
-                 if (x < 1300)
+             
+                 if (x < 2800)
                 {
                     x += 2;
                 }
@@ -220,11 +216,6 @@ namespace RPGGame
             }
             if (IsMovingUp) //up
             {
-              /*  if (background.Screenpos.Y <490)
-                {*/
-                     // y -= 0.5;
-                 //   background.Update(0, 2, "y", graphics);
-           /*     }*/
                  if(y > 10)
                 {
                         y -= 2;
@@ -250,13 +241,8 @@ namespace RPGGame
             }
             if (IsMovingDown) //down
             {
-              /*  if (background.Screenpos.Y  > (graphics.PreferredBackBufferHeight+100)*-1)
-                {
-                    y+=0.5;
-                    background.Update(0, 2, "-y", graphics);
-                    
-                }*/
-                 if (y < 700)
+
+                 if (y < 1700)
                 {
                     y += 2;
                 }

@@ -16,15 +16,17 @@ namespace RPGGame.Engine
         private GraphicsDeviceManager graphics;
         private MenuState menu;
         private StateManager stateManager;
+        private Viewport viewport;
 
         public InputHandler(GraphicsDeviceManager graphics)
         {
             this.graphics = graphics;
         }
 
-        public void CheckForKeyboardInput(StateManager stateManager)
+        public void CheckForKeyboardInput(StateManager stateManager, Viewport viewport)
         {
             this.stateManager = stateManager;
+            this.viewport = viewport;
             if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
             {
                 this.graphics.PreferredBackBufferWidth = 1280;
@@ -46,17 +48,26 @@ namespace RPGGame.Engine
                // Console.Beep();
 
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
                 player.IsMovingDown = true;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 player.IsMovingLeft = true;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                player.IsMovingRight = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Z))
+            {
+                GameState.zoom++;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.X))
+            {
+                GameState.zoom--;
+
             }
 
         }
@@ -71,8 +82,8 @@ namespace RPGGame.Engine
                 && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70).Contains(mousePosition)))
             {
                 
-              //  mplayer.controls.stop();
-                this.stateManager.CurrentState = new GameState(graphics);
+                MenuState.mplayer.controls.stop();
+                this.stateManager.CurrentState = new GameState(graphics,viewport);
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
             {

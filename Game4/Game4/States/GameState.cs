@@ -11,51 +11,54 @@ namespace RPGGame.States
     {
         private GraphicsDeviceManager graphics;
         private Texture2D background;
-        private Player one;
+        public Player one;
         private Rectangle? sourceRect;
         private Texture2D[] allPics;
         private Rectangle sourceRectOne;
         private ScrollingBackground myBackground;
         private InputHandler input;
-        private Camera camera;
-        public GameState(GraphicsDeviceManager graphics)
+        public static int zoom =3;
+        private SpriteFont Font1;
+
+        public GameState(GraphicsDeviceManager graphics, Viewport viewport)
         {
             this.graphics = graphics;
             allPics = new Texture2D[4];
             one = new ChichoMitko(100, 100);
             Initialize();
             input = new InputHandler(graphics);
-           
         }
 
         private void Initialize()
         {
-           // camera = new Camera(GraphicsDevice.Viewport, Vector2.Zero);
-           // this.graphics.IsFullScreen = true;
+            // camera = new Camera(GraphicsDevice.Viewport, Vector2.Zero);
+            // this.graphics.IsFullScreen = true;
             // change these names to the names of your images
             // Create a new SpriteBatch, which can be used to draw textures.
 
-            myBackground = new ScrollingBackground();
-             background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/firstmap");
+            //  myBackground = new ScrollingBackground();
+      //      Font1 = Engine.Engine.ContentLoader.Content.Load<SpriteFont>("Courier New");
+
+            background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/firstmap");
 
             //myBackground.Load(GraphicsDevice, background);
             //allPics = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/pr");
-           
+
 
             string[] imageNames = { "images/up", "images/down", "images/left", "images/pr" };
-            
+
             for (int i = 0; i < imageNames.Length; i++)
             {
-        
-                allPics[i] =Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[i]);
+
+                allPics[i] = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[i]);
             }
-             one.Pic = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[0]);
-           // Pic2 = Content.Load<Texture2D>(imageNames[0]);*/
+            one.Pic = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[0]);
+            // Pic2 = Content.Load<Texture2D>(imageNames[0]);*/
         }
         public override void Update(GameTime gameTime)
         {
-             input.PlayerMovement(one);
-             
+            input.PlayerMovement(one);
+
             one.Moving(this.graphics, allPics);
 
             one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -64,13 +67,16 @@ namespace RPGGame.States
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background,new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), sourceRect, Color.White);
-           
-            spriteBatch.Draw(one.Pic, new Rectangle((int)one.X, (int)one.Y, 30, 30), sourceRectOne,Color.White);
-        }
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,Matrix.CreateTranslation(-((float)one.X)/1.5f, -((float)one.Y)/1.5f, 0));
+            spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width*zoom, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height* zoom), sourceRect, Color.White);
 
-        
-        public override bool IsExited()
+            spriteBatch.Draw(one.Pic, new Rectangle((int)one.X, (int)one.Y, 60, 80), sourceRectOne, Color.White);
+            spriteBatch.End();
+         /*   spriteBatch.Begin();
+            spriteBatch.DrawString(Font1, "da", new Microsoft.Xna.Framework.Vector2 (0,0),Color.Black);
+            spriteBatch.End();*/
+        }
+            public override bool IsExited()
         {
             return false;
         }

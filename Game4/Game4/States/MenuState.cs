@@ -18,7 +18,7 @@ namespace RPGGame.States
         public static InputHandler inputHandler;
         private bool isExited = false;
         private bool isNext;
-        private WMPLib.WindowsMediaPlayer mplayer;
+        public static WMPLib.WindowsMediaPlayer mplayer;
         public static bool Next;
 
         public static bool stopMenu;
@@ -79,10 +79,12 @@ namespace RPGGame.States
         #endregion
         public override void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), sourceRect, Color.White);
             spriteBatch.Draw(play, new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 150, 70), Color.White);
             spriteBatch.Draw(options, new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 150, 70), Color.White);
             spriteBatch.Draw(quit, new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2), 150, 70), Color.White);
+            spriteBatch.End();
         }
     }
 

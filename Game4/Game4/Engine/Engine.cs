@@ -22,17 +22,16 @@ namespace RPGGame.Engine
         private int elapsed;
         private WMPLib.WindowsMediaPlayer mplayer;
         public static bool exit;
-        public Camera camera;
-        private Player one;
+        private GameState game;
         public Engine()
         {
-            one = new Programmer(1000,0);
+          
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             ContentLoader = new ContentLoader(this.Content);
             input = new InputHandler(graphics);
-            this.graphics.PreferredBackBufferWidth = 1920;
-            this.graphics.PreferredBackBufferHeight = 1080;
+            this.graphics.PreferredBackBufferWidth = 1440;
+            this.graphics.PreferredBackBufferHeight = 900;
             this.graphics.ApplyChanges();
 
         }
@@ -44,8 +43,7 @@ namespace RPGGame.Engine
             this.stateManager = new StateManager();
             graphics.ApplyChanges();
 
-            camera = new Camera(GraphicsDevice.Viewport,Vector2.Zero);
-            camera.Reset();
+
             base.Initialize();
 
         }
@@ -64,13 +62,12 @@ namespace RPGGame.Engine
         {
 
             this.stateManager.CurrentState.Update(gameTime);
-            camera.Update(gameTime,one);
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.Escape) || MenuState.stopMenu)
             {
                  Exit();
             }
             input.MouseMovement();
-            input.CheckForKeyboardInput(stateManager);
+            input.CheckForKeyboardInput(stateManager, GraphicsDevice.Viewport);
             if (Keyboard.GetState().IsKeyDown(Keys.B))
             {
                 
@@ -98,9 +95,10 @@ namespace RPGGame.Engine
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.LightBlue);
-            spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null, null, null, null,camera.Transform);
+         //   spriteBatch.Begin();
             this.stateManager.CurrentState.Draw(this.spriteBatch);
-            spriteBatch.End();
+         //   spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }
