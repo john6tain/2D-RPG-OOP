@@ -29,8 +29,8 @@ namespace RPGGame.Engine
             this.viewport = viewport;
             if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
             {
-                this.graphics.PreferredBackBufferWidth = 1280;
-                this.graphics.PreferredBackBufferHeight = 720;
+                this.graphics.PreferredBackBufferWidth = 1366;
+                this.graphics.PreferredBackBufferHeight = 768;
                 this.graphics.ToggleFullScreen();
                 this.graphics.ApplyChanges();
             }
@@ -40,34 +40,63 @@ namespace RPGGame.Engine
             }*/
         }
 
-        public void PlayerMovement(Player player)//TODO: this shit
+        public void PlayerMovement(Player player,bool test)//TODO: this shit
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            if (test)
             {
-                player.IsMovingUp = true;
-               // Console.Beep();
+                if (Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    player.IsMovingUp = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    player.IsMovingDown = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.A))
+                {
+                    player.IsMovingLeft = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.D))
+                {
+                    player.IsMovingRight = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Z))
+                {
+                    GameState.zoom++;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.X))
+                {
+                    GameState.zoom--;
 
+                }
             }
-             if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            else
             {
-                player.IsMovingDown = true;
-            }
-             if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            {
-                player.IsMovingLeft = true;
-            }
-             if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            {
-               player.IsMovingRight = true;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Z))
-            {
-                GameState.zoom++;
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.X))
-            {
-                GameState.zoom--;
+                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                {
+                    player.IsMovingUp = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                {
+                    player.IsMovingDown = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                {
+                    player.IsMovingLeft = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                {
+                    player.IsMovingRight = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Z))
+                {
+                    GameState.zoom++;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.X))
+                {
+                    GameState.zoom--;
 
+                }
             }
 
         }

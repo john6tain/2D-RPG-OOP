@@ -30,7 +30,7 @@ namespace RPGGame.States
             this.graphics = graphics;
             allPics = new Texture2D[4];
             one = new ChichoMitko(100, 100);
-            two = new ChichoMitko(300, 300);
+            two = new ChichoMitko(555, 1260);
             Player.speed = 5;
             Initialize();
             input = new InputHandler(graphics);
@@ -64,16 +64,35 @@ namespace RPGGame.States
         }
         public override void Update(GameTime gameTime)
         {
-            input.PlayerMovement(one);
+            input.PlayerMovement(one,true);
+            
             one.Moving( allPics);
             one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-           // two.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 80);
-            oneRect = new Rectangle((int) one.X, (int) one.Y, 80, 80);
-
+            two.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            
+            sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 60);
+            oneRect = new Rectangle((int) one.X, (int) one.Y, 60, 60);
+            if (one.Y >= 700)
+            {
+                if (two.X > one.X)
+                {
+                    two.X -= 2;
+                } //555 1260
+                if (two.X < one.X)
+                {
+                    two.X += 2;
+                }
+                if (two.Y <= one.Y)
+                {
+                    two.Y++;
+                }
+                if (two.Y >= one.Y)
+                {
+                    two.Y--;
+                }
+            }
             sourceRectTwo = new Rectangle(30 *1, 0, 30, 80);
-            twoRect = new Rectangle((int)two.X, (int)two.Y, 80, 80);
+            twoRect = new Rectangle((int)two.X, (int)two.Y, 60, 80);
             if (oneRect.Intersects(twoRect))
             {
                 one.X = oldX;

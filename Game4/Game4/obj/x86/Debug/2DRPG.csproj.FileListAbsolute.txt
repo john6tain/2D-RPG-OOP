@@ -1,8 +1,3 @@
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\MonoGame.Framework.dll
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\OpenTK.dll
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csprojResolveAssemblyReference.cache
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csproj.ResolveComReference.cache
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csproj.ResolveComReference.cache
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Game4.exe
@@ -49,6 +44,9 @@ C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Conten
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer.xnb
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\THEMENU.xnb
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\up.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.exe
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\CoffeinePot.xnb
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\DamagePot.xnb
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\down.xnb
@@ -68,10 +66,12 @@ C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Conten
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Speed.xnb
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\THEMENU.xnb
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\up.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\MyFont.xnb
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.m4a
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.xnb
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.exe
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.pdb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csproj.ResolveComReference.cache
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\RPGGame.exe
 C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\RPGGame.pdb
-C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\MyFont.xnb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.pdb
+C:\Users\John\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csprojResolveAssemblyReference.cache

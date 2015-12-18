@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/songs/menu.mp3</SourceFile>
-  <SourceTime>2015-12-18T02:26:59.5056763+02:00</SourceTime>
+  <SourceTime>2015-12-18T15:48:25.6804157+02:00</SourceTime>
   <DestFile>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/songs/menu.xnb</DestFile>
-  <DestTime>2015-12-18T03:11:53.0924561+02:00</DestTime>
+  <DestTime>2015-12-18T15:50:32.0603508+02:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>SongProcessor</Processor>
