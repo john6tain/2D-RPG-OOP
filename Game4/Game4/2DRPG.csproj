@@ -44,6 +44,7 @@
     <Compile Include="ContentLoader.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\InputHandler.cs" />
+    <Compile Include="States\Camera.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\State.cs" />
     <Compile Include="States\StateManager.cs" />

@@ -20,7 +20,6 @@ namespace RPGGame.Engine
         public  static GraphicsDeviceManager Graphics { private get; set; }
         private InputHandler input;
         private int elapsed;
-        private WMPLib.WindowsMediaPlayer mplayer;
         public static bool exit;
         private GameState game;
         public Engine()
@@ -39,7 +38,7 @@ namespace RPGGame.Engine
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
-            this.graphics.IsFullScreen = true;
+            //this.graphics.IsFullScreen = true;
             this.stateManager = new StateManager();
             graphics.ApplyChanges();
 
@@ -51,10 +50,7 @@ namespace RPGGame.Engine
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
             base.LoadContent();
-
-
         }
 
 

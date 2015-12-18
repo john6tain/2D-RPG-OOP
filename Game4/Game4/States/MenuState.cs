@@ -27,10 +27,10 @@ namespace RPGGame.States
             Initialize();
             string da = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase);
             mplayer = new WMPLib.WindowsMediaPlayer();
-            Directory.GetCurrentDirectory();
+        /*    Directory.GetCurrentDirectory();
             mplayer.URL = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase) + @"\Content\songs\menu.mp3";
             mplayer.settings.setMode("loop", false);
-            mplayer.controls.play();
+           // mplayer.controls.play();*/
             stopMenu = false;
         }
 

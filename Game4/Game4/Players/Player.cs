@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using RPGGame.PlayersAndClasses;
+using RPGGame.States;
 
 namespace RPGGame
 {
@@ -19,6 +20,7 @@ namespace RPGGame
         /// </summary>
         protected double x;
         protected double y;
+        public static double speed;
         private float elapsed;
         private float delay;
         private int frame;
@@ -26,7 +28,6 @@ namespace RPGGame
         protected double life;
         protected Ability myAbility;
         private string pos;
-
         //TODO :  class weapon
         #endregion
 
@@ -158,13 +159,12 @@ namespace RPGGame
         /// <param name="backgroundElapsed"></param>
         public void Moving(Texture2D[] pics)
         {
-            //var keyses = new Keys[]{Keys.A, Keys.D, Keys.W, Keys.S};
 
             if (IsMovingLeft) //left
             {
                  if(x > -2)//TODO:Moonwalk elapsed -100
                 {
-                    x-=5;
+                    x-=speed;
                 }
                 if (this.Elapsed >= this.Delay)
                 {
@@ -181,17 +181,17 @@ namespace RPGGame
                 }
                 this.Pos = "right";
                 this.pic = null;
-                this.pic = pics[3];
+                this.pic = pics[2]; //For moon walk use 3 Copyright:DCay
                 IsMovingLeft = false;
             }
             if (IsMovingRight) //right
             {
              
-                 if (x < 3700)
+                if (x < 3100)
                 {
-                    x += 2;
+                    x += speed;
                 }
-
+ 
                 if (elapsed >= delay)
                 {
                     if (this.frame >= 1)
@@ -213,7 +213,7 @@ namespace RPGGame
             {
                  if(y > 10)
                 {
-                        y -= 5;
+                        y -= speed;
                 }
                 if (elapsed >= delay)
                 {
@@ -236,10 +236,9 @@ namespace RPGGame
             }
             if (IsMovingDown) //down
             {
-
                  if (y < 2000)
                 {
-                    y += 2;
+                    y += speed;
                 }
                 if (elapsed >= delay)
                 {
