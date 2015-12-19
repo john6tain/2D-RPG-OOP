@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/DamagePot.png</SourceFile>
+  <SourceFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/DamagePot.png</SourceFile>
   <SourceTime>2015-12-19T16:57:11.6924431+02:00</SourceTime>
-  <DestFile>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/DamagePot.xnb</DestFile>
-  <DestTime>2015-12-19T20:35:40.983019+02:00</DestTime>
+  <DestFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/DamagePot.xnb</DestFile>
+  <DestTime>2015-12-19T22:11:06.6413732+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
