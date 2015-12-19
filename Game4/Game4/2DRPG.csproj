@@ -42,8 +42,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ContentLoader.cs" />
+    <Compile Include="CustomException\PlayerSpeedException.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\InputHandler.cs" />
+    <Compile Include="Enums\ArmorSlot.cs" />
+    <Compile Include="Enums\NumOfHands.cs" />
+    <Compile Include="Interfaces\IAttack.cs" />
+    <Compile Include="Interfaces\ICharacter.cs" />
+    <Compile Include="Interfaces\IDefense.cs" />
+    <Compile Include="Interfaces\IPotion.cs" />
+    <Compile Include="Items\ArmorMain\Armor.cs" />
+    <Compile Include="Items\BaseItem.cs" />
+    <Compile Include="Items\ItemManager.cs" />
+    <Compile Include="Items\Potions\Potion.cs" />
+    <Compile Include="Items\ShieldsMain\Shields.cs" />
+    <Compile Include="Items\WeaponsMain\Bow.cs" />
+    <Compile Include="Items\WeaponsMain\Dagger.cs" />
+    <Compile Include="Items\WeaponsMain\Keyboard.cs" />
+    <Compile Include="Items\WeaponsMain\Weapon.cs" />
+    <Compile Include="Players\Character.cs" />
     <Compile Include="States\Camera.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\State.cs" />
@@ -58,7 +75,6 @@
     <Compile Include="Items\Potions\SpeedPotion.cs" />
     <Compile Include="Players\Ability.cs" />
     <Compile Include="Players\Alexsination.cs" />
-    <Compile Include="Items\Item.cs" />
     <Compile Include="Players\ChichoMitko.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Players\Programmer.cs" />

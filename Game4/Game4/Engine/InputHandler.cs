@@ -29,88 +29,59 @@ namespace RPGGame.Engine
             this.viewport = viewport;
             if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
             {
-                this.graphics.PreferredBackBufferWidth = 1366;
-                this.graphics.PreferredBackBufferHeight = 768;
+                this.graphics.PreferredBackBufferWidth = 1280;
+                this.graphics.PreferredBackBufferHeight = 720;
                 this.graphics.ToggleFullScreen();
                 this.graphics.ApplyChanges();
             }
-          /*  else if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-            {
-                
-            }*/
+            /*  else if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+              {
+
+              }*/
         }
 
-        public void PlayerMovement(Player player,bool test)//TODO: this shit
+        public void PlayerMovement(Player player)//TODO: this shit
         {
-            if (test)
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.W))
-                {
-                    player.IsMovingUp = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.S))
-                {
-                    player.IsMovingDown = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.A))
-                {
-                    player.IsMovingLeft = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.D))
-                {
-                    player.IsMovingRight = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Z))
-                {
-                    GameState.zoom++;
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.X))
-                {
-                    GameState.zoom--;
+                player.IsMovingUp = true;
+                // Console.Beep();
 
-                }
             }
-            else
+            if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                {
-                    player.IsMovingUp = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                {
-                    player.IsMovingDown = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Left))
-                {
-                    player.IsMovingLeft = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                {
-                    player.IsMovingRight = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Z))
-                {
-                    GameState.zoom++;
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.X))
-                {
-                    GameState.zoom--;
+                player.IsMovingDown = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                player.IsMovingLeft = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                player.IsMovingRight = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Z))
+            {
+                GameState.zoom++;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.X))
+            {
+                GameState.zoom--;
 
-                }
             }
 
         }
 
-        public void MouseMovement( )
+        public void MouseMovement()
         {
 
-          
+
             var mouseState = Mouse.GetState();
             var mousePosition = new Point(mouseState.X, mouseState.Y);
             if (Keyboard.GetState().IsKeyDown(Keys.Enter) || mouseState.LeftButton == ButtonState.Pressed
                 && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70).Contains(mousePosition)))
             {
-                
+
                 MenuState.mplayer.controls.stop();
                 this.stateManager.CurrentState = new GameState(graphics);
             }

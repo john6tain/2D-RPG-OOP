@@ -1,33 +1,32 @@
-﻿using RPGGame.Interfaces;
-using Microsoft.Xna.Framework.Graphics;
-using RPGGame.PlayersAndClasses;
+﻿using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Players;
 
 namespace RPGGame.Items.Potions
 {
-	public class EnergyPotion : Item, IDrinkable
-	{
-		#region Constructor
+    public class EnergyPotion : Potion
+    {
 
-		public EnergyPotion(Texture2D itemPick, string name, int amountBonus)
-			: base(itemPick, name, amountBonus)
-		{
-			this.Name = "Energy Potion";
-			this.AmountBonus = 20;
-		}
+        #region Constructor
 
-		#endregion
+        public EnergyPotion(string name, int amountBonus, Texture2D itemPic)
+            : base(name, amountBonus, itemPic)
+        {
+            this.Name = "Energy Potion";
+            this.AmountBonus = 20;
 
+        }
+        #endregion
 
-		//	#region Drink Method
-		//
-		//
-		//	public void DrinkPotion(string Name, int AmountBonus)
-		//	{
-		//
-		//	}
-		//
-		//	#endregion
+        #region Methods
+        public override object Clone()
+        {
+            throw new System.NotImplementedException();
+        }
 
-
-	}
+        public override void DrinkPotion(Character player)
+        {
+            player.Energy += AmountBonus;
+        }
+        #endregion
+    }
 }

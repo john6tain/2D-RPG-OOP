@@ -4,25 +4,25 @@
   <Platform>WindowsGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/songs/menu.mp3</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/CoffeinePot.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/DamagePot.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/down.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/EnergyPot.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/exit.gif</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/fire.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/firstmap.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/FocusPot.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/HealthPot.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/hero.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/left.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/options.gif</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/play.gif</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/pr.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/programmer.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/Speed.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/THEMENU.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/up.png</File>
-    <File>C:/Users/John/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/MyFont.spritefont</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/songs/menu.mp3</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/CoffeinePot.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/DamagePot.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/down.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/EnergyPot.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/exit.gif</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/fire.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/firstmap.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/FocusPot.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/HealthPot.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/hero.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/left.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/options.gif</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/play.gif</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/pr.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/programmer.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/Speed.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/THEMENU.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/images/up.png</File>
+    <File>C:/Users/Alex/Desktop/2D-RPG-OOP/Game4/Game4/Content/MyFont.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

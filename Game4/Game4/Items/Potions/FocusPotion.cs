@@ -1,29 +1,29 @@
-﻿using RPGGame.Interfaces;
-using Microsoft.Xna.Framework.Graphics;
-using RPGGame.PlayersAndClasses;
+﻿using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Players;
 
 namespace RPGGame.Items.Potions
 {
-	public class FocusPotion : Item,IDrinkable
-	{
-		#region Constructor
-		public FocusPotion(Texture2D itemPick,string name,int amountBonus)
-			:base(itemPick,name,amountBonus)
-		{
-			this.Name = "Focus Potion";
-			this.AmountBonus = 20;
-		}
-		#endregion
+    public class FocusPotion : Potion
+    {
+        #region Constructor
+        public FocusPotion(string name, int amountBonus, Texture2D itemPic)
+            : base(name, amountBonus, itemPic)
+        {
+            this.Name = "Focus Potion";
+            this.AmountBonus = 20;
+        }
+        #endregion
 
+        #region Methods
+        public override object Clone()
+        {
+            throw new System.NotImplementedException();
+        }
 
-	//	#region Drink Method
-
-//	public void DrinkPotion(string Name, int AmountBonus)
-//	{
-//
-//	}
-//
-//
-//	#endregion
-	}
+        public override void DrinkPotion(Character player)
+        {
+            player.Focus += AmountBonus;
+        }
+        #endregion
+    }
 }

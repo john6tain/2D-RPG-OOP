@@ -1,36 +1,31 @@
-﻿using System;
-using RPGGame.Interfaces;
-using Microsoft.Xna.Framework.Graphics;
-using RPGGame.PlayersAndClasses;
+﻿using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Players;
+using System;
 
 namespace RPGGame.Items.Potions
 {
-	public class SpeedPotion : Item, IDrinkable
-	{
+    public class SpeedPotion : Potion
+    {
+        #region Constructor 
+        public SpeedPotion(string name, int amountBonus, Texture2D itemPic)
+            : base(name, amountBonus, itemPic)
+        {
+            this.Name = "Potion of Swiftness";
+            this.AmountBonus = amountBonus;
 
+        }
+        #endregion
 
-		#region Constructor
+        #region Methods
+        public override object Clone()
+        {
+            throw new NotImplementedException();
+        }
 
-		public SpeedPotion(Texture2D itemPick, string name, int amountBonus)
-			: base(itemPick, name, amountBonus)
-		{
-			this.Name = "Potion of Swiftness";
-			this.AmountBonus = amountBonus;
-		}
-
-
-		#endregion
-
-//		#region Drink Method
-
-//	public void DrinkPotion(string Name, int AmountBonus)
-//	{
-//
-//	}
-//
-//
-//	#endregion
-
-
-	}
+        public override void DrinkPotion(Character player)
+        {
+            player.Speed += AmountBonus;
+        }
+        #endregion
+    }
 }

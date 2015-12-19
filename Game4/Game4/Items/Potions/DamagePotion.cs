@@ -1,35 +1,30 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using RPGGame.Interfaces;
-
-using Microsoft.Xna.Framework.Graphics;
-using RPGGame.PlayersAndClasses;
+﻿using Microsoft.Xna.Framework.Graphics;
+using RPGGame.Players;
 
 namespace RPGGame.Items.Potions
 {
-	public class DamagePotion : Item, IDrinkable
-	{
+    public class DamagePotion : Potion
+    {
+        #region Constructor
+        public DamagePotion(string name, int amountBonus, Texture2D itemPic)
+            : base(name, amountBonus, itemPic)
+        {
+            this.Name = "Damage Potion";
+            this.AmountBonus = amountBonus;
+        }
+        #endregion
 
-		#region Constructor
+        #region Methods
+        public override object Clone()
+        {
+            throw new System.NotImplementedException();
+        }
 
-		public DamagePotion(Texture2D itemPick, string name, int amountBonus)
-			: base(itemPick, name, amountBonus)
-		{
-			this.Name = "Damage Potion";
-			this.AmountBonus = amountBonus;
-		}
-		#endregion
+        public override void DrinkPotion(Character player)
+        {
+            player.Damage += AmountBonus;
 
-
-//	#region Drink Method
-//
-//	public void DrinkPotion(string Name, int AmountBonus)
-//	{
-//
-//	}
-//
-//
-//	#endregion
-
-
-	}
+        }
+        #endregion
+    }
 }

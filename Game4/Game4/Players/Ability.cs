@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RPGGame.PlayersAndClasses;
-using Microsoft.Xna.Framework.Graphics;
-using RPGGame.Items;
+﻿using RPGGame.Items;
 
 namespace RPGGame.Players
 {
@@ -56,7 +50,7 @@ namespace RPGGame.Players
         /// Add Item Method
         /// </summary>
         /// <param name="item"></param>
-        public void AddItem(Item item)
+        public void AddItem(BaseItem item)
         {
             this.abilityValue += item.AmountBonus;
         }
