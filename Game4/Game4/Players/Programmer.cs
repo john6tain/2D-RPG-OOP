@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using RPGGame.Players;
+﻿using RPGGame.Players;
+using Microsoft.Xna.Framework.Graphics;
 
 /// <summary>
 /// John made this class
@@ -16,7 +16,7 @@ namespace RPGGame.PlayersAndClasses
         /// <summary>
         /// Fields
         /// </summary>
-        private int coffeine;
+        private int caffeine;
         #endregion
 
         #region Constructor
@@ -25,13 +25,12 @@ namespace RPGGame.PlayersAndClasses
         /// </summary>
         public Programmer(int x, int y) : base(x, y)
         {
-
+            
         }
-        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDoors, int coffeine, int damage, int speed)
-           : base(x, y, pic, life, hackingDoors, damage, speed)
+        public Programmer(int x, int y, Texture2D pic, double life, Ability hackingDoors, int caffeine)
+           : base(x, y, pic, life, hackingDoors)
         {
-            this.Coffeine = coffeine;
-            this.Speed = 65;
+            this.Caffeine = caffeine;
         }
 
         #endregion
@@ -42,22 +41,8 @@ namespace RPGGame.PlayersAndClasses
         /// </summary>
         public int Caffeine
         {
-            get { return this.coffeine; }
-            set { this.coffeine = value; }
-        }
-
-        #endregion
-
-        #region Method
-
-        public override void Attack(Character character)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Defense(Character character)
-        {
-            throw new System.NotImplementedException();
+            get { return this.caffeine; }
+            set { this.caffeine = value; }
         }
 
         #endregion

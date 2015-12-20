@@ -7,5 +7,9 @@ namespace RPGGame.CustomException
 {
     partial class PlayerSpeedException : Exception
     {
+        public PlayerSpeedException(String message, String description)
+        {
+        }
+
     }
 }

@@ -29,8 +29,8 @@ namespace RPGGame.Engine
             Content.RootDirectory = "Content";
             ContentLoader = new ContentLoader(this.Content);
             input = new InputHandler(graphics);
-            this.graphics.PreferredBackBufferWidth = 1366;
-            this.graphics.PreferredBackBufferHeight = 768;
+            this.graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            this.graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             this.graphics.ApplyChanges();
 
         }

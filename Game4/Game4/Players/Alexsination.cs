@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using RPGGame.Players;
+﻿using RPGGame.Players;
+using Microsoft.Xna.Framework.Graphics;
 
 /// <summary>
 /// Alex made this class
@@ -19,18 +19,18 @@ namespace RPGGame.PlayersAndClasses
         /// <summary>
         /// Constructor
         /// </summary>
-        public Alexsination(int x, int y)
-            : base(x, y)
+        public Alexsination(int x, int y) 
+			: base(x, y)
         {
-
+            
         }
-        public Alexsination(int x, int y, Texture2D pic, double life, Ability teleport, int energy, int damage, int speed)
-           : base(x, y, pic, life, teleport, damage, speed)
+        public Alexsination(int x, int y, Texture2D pic, double life, Ability teleport, int energy)
+           : base(x, y, pic, life, teleport)
         {
             this.Energy = 100;
-            this.Speed = 80;
         }
         #endregion
+
 
 
         #region Properties
@@ -48,20 +48,6 @@ namespace RPGGame.PlayersAndClasses
                 }
                 this.energy = value;
             }
-        }
-
-        #endregion
-
-        #region Methods Region
-
-        public override void Attack(Character character)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Defense(Character character)
-        {
-            throw new System.NotImplementedException();
         }
 
         #endregion
