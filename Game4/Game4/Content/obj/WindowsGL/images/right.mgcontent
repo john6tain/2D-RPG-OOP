@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/programmer.png</SourceFile>
-  <SourceTime>2015-12-19T16:57:11.8414516+02:00</SourceTime>
-  <DestFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/programmer.xnb</DestFile>
-  <DestTime>2015-12-21T16:49:52.8960609+02:00</DestTime>
+  <SourceFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/images/right.png</SourceFile>
+  <SourceTime>2015-12-21T19:25:47.9050451+02:00</SourceTime>
+  <DestFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/images/right.xnb</DestFile>
+  <DestTime>2015-12-21T19:25:49.8582653+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

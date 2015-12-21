@@ -1,14 +1,5 @@
-﻿using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using RPGGame.Engine;
+﻿using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
-using RPGGame.PlayersAndClasses;
-using Microsoft.Win32;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using RPGGame.PlayersAndClasses;
-using RPGGame.States;
 
 namespace RPGGame
 {
@@ -28,6 +19,9 @@ namespace RPGGame
         protected double life;
         protected Ability myAbility;
         private string pos;
+        protected double oldX;
+        protected double oldY;
+
         //TODO :  class weapon
         #endregion
 
@@ -70,14 +64,14 @@ namespace RPGGame
         public double Life
         {
             get { return this.life; }
-	        set
-	        {
-		        if (value > 1000)
-		        {
-			        value = 1000;
-		        }
-		        this.life = value;
-	        }
+            set
+            {
+                if (value > 1000)
+                {
+                    value = 1000;
+                }
+                this.life = value;
+            }
         }
 
         public Ability MyAbility
@@ -148,6 +142,18 @@ namespace RPGGame
             this.IsMovingUp = false;
         }
 
+        public double OldX
+        {
+            get { return this.oldX; }
+            set { this.oldX = value; }
+        }
+
+        public double OldY
+        {
+            get { return this.oldY; }
+            set { this.oldY = value; }
+        }
+
         #endregion
 
         #region Moving Method
@@ -162,9 +168,9 @@ namespace RPGGame
 
             if (IsMovingLeft) //left
             {
-                 if(x > -2)//TODO:Moonwalk elapsed -100
+                if (x > 0)//TODO:Moonwalk elapsed -100
                 {
-                    x-=speed;
+                    x -= speed;
                 }
                 if (this.Elapsed >= this.Delay)
                 {
@@ -186,12 +192,12 @@ namespace RPGGame
             }
             if (IsMovingRight) //right
             {
-             
-                if (x < 3100)
+
+                if (x < 3960)
                 {
                     x += speed;
                 }
- 
+
                 if (elapsed >= delay)
                 {
                     if (this.frame >= 1)
@@ -203,7 +209,7 @@ namespace RPGGame
                         frame++;
                     }
 
-                   elapsed = 0;
+                    elapsed = 0;
                 }
                 this.Pos = "right";
                 this.pic = null;
@@ -211,9 +217,9 @@ namespace RPGGame
             }
             if (IsMovingUp) //up
             {
-                 if(y > 10)
+                if (y > 10)
                 {
-                        y -= speed;
+                    y -= speed;
                 }
                 if (elapsed >= delay)
                 {
@@ -236,7 +242,7 @@ namespace RPGGame
             }
             if (IsMovingDown) //down
             {
-                 if (y < 2000)
+                if (y < 2000)
                 {
                     y += speed;
                 }

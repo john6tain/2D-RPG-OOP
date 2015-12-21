@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using OpenTK;
 using RPGGame.Engine;
 using RPGGame.PlayersAndClasses;
 
@@ -20,7 +18,7 @@ namespace RPGGame.States
         private Rectangle sourceRectTwo;
         private Rectangle twoRect;
         private InputHandler input;
-        public static int zoom =3;
+        public static int zoom = 3;
         private SpriteFont Font1;
         private double oldX;
         private double oldY;
@@ -52,9 +50,9 @@ namespace RPGGame.States
             //allPics = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/pr");
 
 
-            string[] imageNames = { "images/up", "images/down", "images/left", "images/left" };
+            string[] imageNames = { "images/up", "images/down", "images/left", "images/right" };
 
-            for (int i = 0; i < imageNames.Length; i++)
+            for (int i = 0; i < imageNames.Length; i++)     
             {
 
                 allPics[i] = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[i]);
@@ -64,14 +62,14 @@ namespace RPGGame.States
         }
         public override void Update(GameTime gameTime)
         {
-            input.PlayerMovement(one,true);
-            
-            one.Moving( allPics);
+            input.PlayerMovement(one, true);
+
+            one.Moving(allPics);
             one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             two.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            
+
             sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 60);
-            oneRect = new Rectangle((int) one.X, (int) one.Y, 60, 60);
+            oneRect = new Rectangle((int)one.X, (int)one.Y, 60, 60);
             if (one.Y >= 700)
             {
                 if (two.X > one.X)
@@ -91,7 +89,7 @@ namespace RPGGame.States
                     two.Y--;
                 }
             }
-            sourceRectTwo = new Rectangle(30 *1, 0, 30, 80);
+            sourceRectTwo = new Rectangle(30 * 1, 0, 30, 80);
             twoRect = new Rectangle((int)two.X, (int)two.Y, 60, 80);
             if (oneRect.Intersects(twoRect))
             {
@@ -100,24 +98,24 @@ namespace RPGGame.States
             }
             else
             {
-                oldX= one.X;
-                oldY = one.Y;
+                one.OldX = one.X;
+                one.OldY = one.Y;
             }
 
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,Camera.CameraMoving((float)one.X, (float)one.Y, 1.5f));
-            spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width*zoom, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height* zoom), sourceRect, Color.White);
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, Camera.CameraMoving((float)one.X, (float)one.Y, 1.5f));
+            spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width * zoom, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height * zoom), sourceRect, Color.White);
 
             spriteBatch.Draw(one.Pic, oneRect, sourceRectOne, Color.White);
             spriteBatch.Draw(one.Pic, twoRect, sourceRectTwo, Color.White);
             spriteBatch.End();
             spriteBatch.Begin();
-            spriteBatch.DrawString(Font1, one.X.ToString() + "   " + one.Y.ToString(), new Microsoft.Xna.Framework.Vector2 (0,0),Color.DarkRed);
+            spriteBatch.DrawString(Font1, one.X.ToString() + "   " + one.Y.ToString(), new Microsoft.Xna.Framework.Vector2(0, 0), Color.DarkRed);
             spriteBatch.End();
         }
-            public override bool IsExited()
+        public override bool IsExited()
         {
             return false;
         }
