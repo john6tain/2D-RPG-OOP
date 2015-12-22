@@ -1,15 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using RPGGame.CustomException;
+﻿using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Interfaces;
-using RPGGame.PlayersAndClasses;
 
 namespace RPGGame.Players
 {
     public abstract class Character : ICharacter
     {
-        #region Fields Region
+
+        #region Fields
 
         protected double x;
         protected double y;
@@ -25,6 +22,8 @@ namespace RPGGame.Players
         private int energy;
         private int focus;
         private int speed;
+        protected double oldX;
+        protected double oldY;
 
         #endregion
 
@@ -78,10 +77,6 @@ namespace RPGGame.Players
             get { return this.speed; }
             set
             {
-                if (speed <= 0)
-                {
-                    throw new PlayerSpeedException("The speed cannot be negative", "speed limit");
-                }
                 this.speed = value;
             }
         }
@@ -197,27 +192,35 @@ namespace RPGGame.Players
 
         }
 
+        public double OldX
+        {
+            get { return this.oldX; }
+            set { this.oldX = value; }
+        }
+
+        public double OldY
+        {
+            get { return this.oldY; }
+            set { this.oldY = value; }
+        }
+
+        public bool IsMovingUp { get; set; }
+        public bool IsMovingDown { get; set; }
+        public bool IsMovingLeft { get; set; }
+        public bool IsMovingRight { get; set; }
+
         #endregion
 
-        #region Moving Method
-        /// <summary>
-        /// Moving Method
-        /// </summary>
-        public void Moving(PlayerIndex playerIndex, Keys[] keyses, ref ScrollingBackground background, GraphicsDeviceManager graphics, Texture2D[] pics)
+        #region Moving method
+
+        public void Moving(Texture2D[] pics)
         {
 
-
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[0])) //left
+            if (IsMovingLeft) //left
             {
-
-                if (background.Screenpos.X < (graphics.PreferredBackBufferWidth - 80))
+                if (x > 0)//TODO:Moonwalk elapsed -100
                 {
-                    background.Update(2, 0, "x", graphics);
-                }
-                else if (x > 0)
-                {
-
-                    x -= 2;
+                    x -= speed;
                 }
                 if (this.Elapsed >= this.Delay)
                 {
@@ -230,22 +233,19 @@ namespace RPGGame.Players
                         this.Frame++;
                     }
 
-                    this.Elapsed = 0;
+                    this.Elapsed = 0; //For moon walk use -100 Copyright:DCay
                 }
-                this.Pos = "left";
+                this.Pos = "right";
                 this.pic = null;
-                this.pic = pics[2];
+                this.pic = pics[2]; //For moon walk use 3 Copyright:DCay
+                IsMovingLeft = false;
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[1])) //right
+            if (IsMovingRight) //right
             {
-                if (background.Screenpos.X > -228)
-                {
 
-                    background.Update(2f, 0, "-x", graphics);
-                }
-                else if (x < 1300)
+                if (x < 3960)
                 {
-                    x += 2;
+                    x += speed;
                 }
 
                 if (elapsed >= delay)
@@ -263,18 +263,13 @@ namespace RPGGame.Players
                 }
                 this.Pos = "right";
                 this.pic = null;
-                this.pic = pics[3];
+                this.pic = pics[3]; IsMovingRight = false;
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[2])) //up
+            if (IsMovingUp) //up
             {
-                if (background.Screenpos.Y < 490)
+                if (y > 10)
                 {
-                    y -= 0.5;
-                    background.Update(0, 2, "y", graphics);
-                }
-                else if (y > 10)
-                {
-                    y -= 2;
+                    y -= speed;
                 }
                 if (elapsed >= delay)
                 {
@@ -292,19 +287,14 @@ namespace RPGGame.Players
                 this.Pos = "up";
                 this.pic = null;
                 this.pic = pics[0];
+                IsMovingUp = false;
 
             }
-            if (Keyboard.GetState(playerIndex).IsKeyDown(keyses[3])) //down
+            if (IsMovingDown) //down
             {
-                if (background.Screenpos.Y > -1120)
+                if (y < 2000)
                 {
-                    y += 0.5;
-                    background.Update(0, 2, "-y", graphics);
-
-                }
-                else if (y < 700)
-                {
-                    y += 2;
+                    y += speed;
                 }
                 if (elapsed >= delay)
                 {
@@ -322,20 +312,19 @@ namespace RPGGame.Players
                 this.Pos = "down";
                 this.pic = null;
                 this.pic = pics[1];
+                IsMovingDown = false;
             }
         }
+
         #endregion
 
         #region Action Methods
 
         public abstract void Attack(Character character);
 
-        public abstract void Defense(Character character);
+        public abstract void Defence(Character character);
 
         #endregion
-
-
-
 
     }
 }

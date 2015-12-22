@@ -1,32 +1,22 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
 
-/// <summary>
-/// John made this class
-/// #Programmer
-/// #Coffeine
-/// </summary>
-
-namespace RPGGame.PlayersAndClasses
+namespace RPGGame.Enemies
 {
-    public class Programmer : Character
+    public class Mob : Enemy
     {
-        #region Constructor
-        /// <summary>
-        /// Constructor
-        /// </summary>
 
-        public Programmer(double x, double y)
+        #region Constructor
+
+        public Mob(double x, double y)
             : base(x, y)
         {
         }
 
-        public Programmer(double x, double y, Texture2D pic, double life, Ability hackingDoors, int damage, int speed, int coffeine)
-            : base(x, y, pic, life, hackingDoors, damage, speed)
+        public Mob(double x, double y, Texture2D pic, double life, Ability myAbility, int damage, int speed)
+            : base(x, y, pic, life, myAbility, damage, speed)
         {
-            this.Coffeine = 500;
         }
-
         #endregion
 
         #region Action Methods
@@ -42,6 +32,5 @@ namespace RPGGame.PlayersAndClasses
         }
 
         #endregion
-
     }
 }

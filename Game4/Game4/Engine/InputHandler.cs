@@ -1,11 +1,6 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using OpenTK.Graphics.OpenGL;
-using RPGGame.Engine;
-using RPGGame.Engine;
 using RPGGame.Players;
 using RPGGame.States;
 
@@ -13,10 +8,16 @@ namespace RPGGame.Engine
 {
     public class InputHandler
     {
+        #region Fields
+
         private GraphicsDeviceManager graphics;
         private MenuState menu;
         private StateManager stateManager;
         private Viewport viewport;
+
+        #endregion
+
+        #region Constructor
 
         public InputHandler(GraphicsDeviceManager graphics)
         {
@@ -34,13 +35,13 @@ namespace RPGGame.Engine
                 this.graphics.ToggleFullScreen();
                 this.graphics.ApplyChanges();
             }
-          /*  else if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-            {
-                
-            }*/
         }
 
-        public void PlayerMovement(Player player,bool test)//TODO: this shit
+        #endregion
+
+        #region Movement
+
+        public void PlayerMovement(Character player, bool test)//TODO: this shit
         {
             if (test)
             {
@@ -100,17 +101,20 @@ namespace RPGGame.Engine
             }
 
         }
+        #endregion
 
-        public void MouseMovement( )
+        #region Mouse Move
+
+        public void MouseMovement()
         {
 
-          
+
             var mouseState = Mouse.GetState();
             var mousePosition = new Point(mouseState.X, mouseState.Y);
             if (Keyboard.GetState().IsKeyDown(Keys.Enter) || mouseState.LeftButton == ButtonState.Pressed
                 && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 100, 70).Contains(mousePosition)))
             {
-                
+
                 MenuState.mplayer.controls.stop();
                 this.stateManager.CurrentState = new GameState(graphics);
             }
@@ -124,5 +128,6 @@ namespace RPGGame.Engine
             }
 
         }
+        #endregion
     }
 }

@@ -15,11 +15,16 @@ namespace RPGGame.States
         /// <summary>
         /// Constructor
         /// </summary>
+
+        #region Constuctor
+
         public Options()
         {
             this.fullscreen = true;
             this.resolution = new Vector2(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
         }
+
+        #endregion
 
         #region Properties
 

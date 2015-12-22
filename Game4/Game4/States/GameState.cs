@@ -1,16 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Engine;
+using RPGGame.Players;
 using RPGGame.PlayersAndClasses;
 
 namespace RPGGame.States
 {
     public class GameState : State
     {
+
+        #region Fields
         private GraphicsDeviceManager graphics;
         private Texture2D background;
-        public Player one;
-        public Player two;
+        public Character one;
+        public Character two;
         private Rectangle? sourceRect;
         private Texture2D[] allPics;
         private Rectangle sourceRectOne;
@@ -20,39 +23,35 @@ namespace RPGGame.States
         private InputHandler input;
         public static int zoom = 3;
         private SpriteFont Font1;
-        private double oldX;
-        private double oldY;
 
+        #endregion
+
+        #region Constructor
         public GameState(GraphicsDeviceManager graphics)
         {
             this.graphics = graphics;
             allPics = new Texture2D[4];
             one = new ChichoMitko(100, 100);
             two = new ChichoMitko(555, 1260);
-            Player.speed = 5;
+            one.Speed = 5;
             Initialize();
             input = new InputHandler(graphics);
         }
 
+        #endregion
+
+        #region Methods
+
         private void Initialize()
         {
-            // camera = new Camera(GraphicsDevice.Viewport, Vector2.Zero);
-            // this.graphics.IsFullScreen = true;
-            // change these names to the names of your images
-            // Create a new SpriteBatch, which can be used to draw textures.
 
-            //  myBackground = new ScrollingBackground();
             Font1 = Engine.Engine.ContentLoader.Content.Load<SpriteFont>("MyFont");
 
             background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/firstmap");
 
-            //myBackground.Load(GraphicsDevice, background);
-            //allPics = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/pr");
-
-
             string[] imageNames = { "images/up", "images/down", "images/left", "images/right" };
 
-            for (int i = 0; i < imageNames.Length; i++)     
+            for (int i = 0; i < imageNames.Length; i++)
             {
 
                 allPics[i] = Engine.Engine.ContentLoader.Content.Load<Texture2D>(imageNames[i]);
@@ -93,8 +92,8 @@ namespace RPGGame.States
             twoRect = new Rectangle((int)two.X, (int)two.Y, 60, 80);
             if (oneRect.Intersects(twoRect))
             {
-                one.X = oldX;
-                one.Y = oldY;
+                one.X = one.OldX;
+                one.Y = one.OldY;
             }
             else
             {
@@ -119,6 +118,8 @@ namespace RPGGame.States
         {
             return false;
         }
+
+        #endregion
 
     }
 }

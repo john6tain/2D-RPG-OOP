@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ContentLoader.cs" />
     <Compile Include="CustomException\PlayerSpeedException.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Enemies\Mob.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\InputHandler.cs" />
     <Compile Include="Enums\ArmorSlot.cs" />
@@ -78,7 +80,6 @@
     <Compile Include="Players\Ability.cs" />
     <Compile Include="Players\Alexsination.cs" />
     <Compile Include="Players\ChichoMitko.cs" />
-    <Compile Include="Players\Player.cs" />
     <Compile Include="Players\Programmer.cs" />
     <Compile Include="ScrollingBackground.cs" />
     <Compile Include="Program.cs" />
@@ -112,7 +113,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
   <!-- Specify the search path explicitly so the ResolveAssemblyReferences task picks the right ones -->
   <Target Name="BeforeResolveReferences">
     <CreateProperty Value="$(MSBuildProgramFiles32)\MonoGame\v3.0\Assemblies\Windows;$(AssemblySearchPaths)">

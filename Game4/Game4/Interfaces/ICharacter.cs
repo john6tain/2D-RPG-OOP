@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
 
 namespace RPGGame.Interfaces
 {
-    public interface ICharacter : IAttack, IDefense
+    public interface ICharacter : IAttack, IDefence
     {
-        #region PROPERTIES
+        #region Properties
 
         double X { get; }
         double Y { get; }

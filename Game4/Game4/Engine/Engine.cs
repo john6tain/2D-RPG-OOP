@@ -1,30 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using RPGGame.PlayersAndClasses;
 using RPGGame.States;
 
 namespace RPGGame.Engine
 {
     class Engine : Game
     {
+
+        #region Fields
+
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
         private StateManager stateManager;
         public static ContentLoader ContentLoader;
-        public  static GraphicsDeviceManager Graphics { private get; set; }
         private InputHandler input;
-        private int elapsed;
-        public static bool exit;
-        private GameState game;
+        #endregion
+
+        #region Constructor
         public Engine()
         {
-          
+
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             ContentLoader = new ContentLoader(this.Content);
@@ -34,6 +30,9 @@ namespace RPGGame.Engine
             this.graphics.ApplyChanges();
 
         }
+        #endregion
+
+        #region Initialize Method
 
         protected override void Initialize()
         {
@@ -42,10 +41,13 @@ namespace RPGGame.Engine
             this.stateManager = new StateManager();
             graphics.ApplyChanges();
 
-
             base.Initialize();
 
         }
+
+        #endregion
+
+        #region Loading content
 
         protected override void LoadContent()
         {
@@ -53,36 +55,26 @@ namespace RPGGame.Engine
             base.LoadContent();
         }
 
+        #endregion
+
+        #region Update method
 
         protected override void Update(GameTime gameTime)
         {
 
             this.stateManager.CurrentState.Update(gameTime);
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.Escape) || MenuState.stopMenu)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape) || MenuState.stopMenu)
             {
-                 Exit();
+                Exit();
             }
             input.MouseMovement();
             input.CheckForKeyboardInput(stateManager, GraphicsDevice.Viewport);
-            if (Keyboard.GetState().IsKeyDown(Keys.B))
-            {
-                
-               // camera.View = new Viewport(700, 100, 30, 30);
-            }
-           
-
-             /*one.Moving(PlayerIndex.One, new Keys[] { Keys.A, Keys.D, Keys.W, Keys.S }, ref myBackground, this.graphics, allPics);
-             two.Moving(PlayerIndex.Two, new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down }, ref myBackground, this.graphics, allPics);
-             one.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-             two.Elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-             sourceRectOne = new Rectangle(30 * one.Frame, 0, 30, 52);
-             sourceRectTwo = new Rectangle(30 * two.Frame, 0, 30, 52);
-
-             //  myBackground.Update(one.Frame*2);*/
-
             base.Update(gameTime);
 
         }
+
+        #endregion
+
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -91,9 +83,7 @@ namespace RPGGame.Engine
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.LightBlue);
-         //   spriteBatch.Begin();
             this.stateManager.CurrentState.Draw(this.spriteBatch);
-         //   spriteBatch.End();
 
             base.Draw(gameTime);
         }

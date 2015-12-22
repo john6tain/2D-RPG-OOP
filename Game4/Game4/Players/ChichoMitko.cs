@@ -1,5 +1,4 @@
-﻿using RPGGame.Players;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
 
 /// <summary>
@@ -10,51 +9,38 @@ using RPGGame.Players;
 
 namespace RPGGame.PlayersAndClasses
 {
-    public class ChichoMitko : Player
+    public class ChichoMitko : Character
     {
-        #region fields
-        /// <summary>
-        /// Fields
-        /// </summary>
-        private int focus;
-
-        #endregion
-
         #region Constructor
         /// <summary>
         ///  Constructors
         /// </summary>
 
-        public ChichoMitko(int x, int y) : base(x, y)
+        public ChichoMitko(double x, double y)
+            : base(x, y)
         {
-
         }
 
-        public ChichoMitko(int x, int y, Texture2D pic, double life, Ability miracleShot, int focus)
-           : base(x, y, pic, life, miracleShot)
+        public ChichoMitko(double x, double y, Texture2D pic, double life, Ability miracleShot, int damage, int speed, int focus)
+            : base(x, y, pic, life, miracleShot, damage, speed)
         {
             this.Focus = 100;
         }
-
         #endregion
 
-        #region Properties
-        /// <summary>
-        /// Properties
-        /// </summary>
-        public int Focus
+        #region Action Methods
+
+        public override void Attack(Character character)
         {
-            get { return this.focus; }
-            set
-            {
-                if (value > 100)
-                {
-                    value += 100;
-                }
-                this.focus = value;
-            }
+            throw new System.NotImplementedException();
+        }
+
+        public override void Defence(Character character)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion
+
     }
 }

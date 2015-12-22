@@ -1,13 +1,15 @@
-﻿using System.IO;
-using System.Reflection;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Engine;
+using System.IO;
+using System.Reflection;
 
 namespace RPGGame.States
 {
     public class MenuState : State
     {
+
+        #region Fields
         private Texture2D background;
         private Texture2D play;
         private Texture2D options;
@@ -20,20 +22,26 @@ namespace RPGGame.States
         private bool isNext;
         public static WMPLib.WindowsMediaPlayer mplayer;
         public static bool Next;
-
         public static bool stopMenu;
+
+        #endregion
+
+        #region Constructor
         public MenuState()
         {
             Initialize();
             string da = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase);
             mplayer = new WMPLib.WindowsMediaPlayer();
-        /*    Directory.GetCurrentDirectory();
-            mplayer.URL = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase) + @"\Content\songs\menu.mp3";
-            mplayer.settings.setMode("loop", false);
-           // mplayer.controls.play();*/
+            /*    Directory.GetCurrentDirectory();
+                mplayer.URL = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase) + @"\Content\songs\menu.mp3";
+                mplayer.settings.setMode("loop", false);
+               // mplayer.controls.play();*/
             stopMenu = false;
         }
 
+        #endregion
+
+        #region Methods
         public override bool IsExited()
         {
             return isExited;
@@ -41,9 +49,9 @@ namespace RPGGame.States
 
         public override void Update(GameTime gameTime)
         {
-            
+
             elapsed += gameTime.ElapsedGameTime.Milliseconds;
-           // inputHandler.MouseMovement();
+            // inputHandler.MouseMovement();
             if (elapsed >= 200)
             {
                 if (frame >= 2)
@@ -57,12 +65,11 @@ namespace RPGGame.States
 
                 elapsed = 0;
             }
-            
-           sourceRect = new Rectangle(100 * frame, 0, 640, 250);
 
+            sourceRect = new Rectangle(100 * frame, 0, 640, 250);
+            #endregion
 
         }
-        #region Initialize
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to Load
@@ -76,7 +83,6 @@ namespace RPGGame.States
             this.quit = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/exit");
         }
 
-        #endregion
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RPGGame.Players;
+﻿using RPGGame.Players;
 
 namespace RPGGame.Interfaces
 {
-    public interface IDefense
+    #region Defence
+
+    public interface IDefence
     {
-        void Defense(Character character);
+        void Defence(Character character);
     }
+
+    #endregion
 }

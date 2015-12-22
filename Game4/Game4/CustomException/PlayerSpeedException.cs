@@ -1,11 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace RPGGame.CustomException
 {
     partial class PlayerSpeedException : Exception
     {
+        #region SpeedException
+        public PlayerSpeedException(string message)
+            : base(message)
+        {
+
+        }
+        #endregion
     }
 }
