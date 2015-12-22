@@ -114,11 +114,10 @@ namespace RPGGame.Engine
             {
 
                 MenuState.mplayer.controls.stop();
-                this.stateManager.CurrentState = new GameState(graphics);
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 100, 70)).Contains(mousePosition))
             {
-                Mouse.SetPosition(0, 0);
+                this.stateManager.CurrentState = new Options();
             }
             if (mouseState.LeftButton == ButtonState.Pressed && (new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2), 100, 70).Contains(mousePosition)))
             {

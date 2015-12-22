@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Enemies;
 using RPGGame.Engine;
-using RPGGame.Interfaces;
 using RPGGame.Players;
-using RPGGame.PlayersAndClasses;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using WMPLib;
 
 namespace RPGGame.States
@@ -49,7 +47,8 @@ namespace RPGGame.States
             mplayer.settings.setMode("loop", true);
             mplayer.controls.stop();
             rand = new Random();
-            one = new Programmer(100, 100);
+            one = GameState.playerNow;
+
             enemies = new List<Mob>();
             one.MaxWidth = 4000;
             one.MaxHeight = 2500;
@@ -73,6 +72,8 @@ namespace RPGGame.States
 
         #endregion
 
+        public static Character playerNow { get; set; }
+
         #region Methods
 
         private void Initialize()
@@ -86,7 +87,7 @@ namespace RPGGame.States
             {
                 enemies.Add(new Mob(rand.Next(1, 300) * rand.Next(1, 10) * rand.Next(5, 10), rand.Next(50, 300) + 200 * rand.Next(5, 10)));
                 enemies[i].Pic = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/lizer");
-                enemies[i].Speed = rand.Next(2,3);
+                enemies[i].Speed = rand.Next(2, 3);
             }
             for (int i = 0; i < imageNames.Length; i++)
             {
@@ -101,7 +102,7 @@ namespace RPGGame.States
         }
         public override void Update(GameTime gameTime)
         {
-           
+
             input.PlayerMovement(one, true);
 
             one.Moving();
@@ -119,28 +120,28 @@ namespace RPGGame.States
             if (one.Y >= 2100)
             {
 
-               
+
                 if (boss.X > one.X)
                 {
-                   
+
                     boss.X -= boss.Speed;
                 } //555 1260
                 if (boss.X < one.X)
                 {
-              
+
                     boss.X += boss.Speed;
                 }
                 if (boss.Y <= one.Y && boss.Y < 2300)
                 {
-                   
+
                     boss.Y += boss.Speed;
                 }
                 if (boss.Y >= one.Y)
                 {
-                   
+
                     boss.Y -= boss.Speed;
                 }
-                
+
             }
             sourceRectBoss = new Rectangle(221 * boss.Frame, 0, 221, 226);
             bossRect = new Rectangle((int)boss.X, (int)boss.Y, 221, 226);
@@ -173,7 +174,7 @@ namespace RPGGame.States
                 if (oneRect.Intersects(enemiesRect[i]))
                 {
                     mplayer.controls.play();
-                    if (!one.Dead|| !enemies[i].Dead)
+                    if (!one.Dead || !enemies[i].Dead)
                     {
 
                         if (enemies[i].Elapsed >= enemies[i].Delay)
@@ -195,13 +196,13 @@ namespace RPGGame.States
                     }
                     if (enemies[i].Dead)
                     {
-                       enemies.RemoveAt(i);
+                        enemies.RemoveAt(i);
                     }
                     else
                     {
                         one.OldX = one.X;
                         one.OldY = one.Y;
-                       
+
                     }
                 }
             }
@@ -209,8 +210,8 @@ namespace RPGGame.States
             {
                 if (!one.Dead)
                 {
-                    
-                   
+
+
                     if (boss.Elapsed >= boss.Delay)
                     {
                         if (boss.Frame >= 5)
