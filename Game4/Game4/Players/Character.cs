@@ -1,9 +1,11 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using System.Runtime.Remoting.Messaging;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using RPGGame.Interfaces;
 
 namespace RPGGame.Players
 {
-    public abstract class Character : ICharacter
+    public abstract class Character : ICharacter,IAttack
     {
 
         #region Fields
@@ -14,6 +16,7 @@ namespace RPGGame.Players
         private float delay;
         private int frame;
         protected Texture2D pic;
+        protected Texture2D[] pics;
         private double life;
         protected Ability myAbility;
         protected string pos;
@@ -21,13 +24,14 @@ namespace RPGGame.Players
         private int coffeine;
         private int energy;
         private int focus;
-        private int speed;
+        private float speed;
         protected double oldX;
         protected double oldY;
 
         #endregion
 
         #region Constructor
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -38,12 +42,13 @@ namespace RPGGame.Players
             this.Y = y;
         }
 
-        protected Character(double x, double y, Texture2D pic, double life, Ability myAbility, int damage, int speed)
+        protected Character(double x, double y, Texture2D[] pics, double life, Ability myAbility, int damage,
+            float speed)
         {
             this.X = x;
             this.Y = y;
             this.Life = 1000;
-            this.Pic = pic;
+            this.Pics = pics;
             this.MyAbility = myAbility;
             this.Delay = 100f;
             this.Frame = 0;
@@ -72,13 +77,10 @@ namespace RPGGame.Players
             }
         }
 
-        public int Speed
+        public float Speed
         {
             get { return this.speed; }
-            set
-            {
-                this.speed = value;
-            }
+            set { this.speed = value; }
         }
 
         public int Focus
@@ -115,34 +117,28 @@ namespace RPGGame.Players
 
         public double X
         {
-            get
-            {
-                return this.x;
-            }
+            get { return this.x; }
 
-            set
-            {
-                this.x = value;
-            }
+            set { this.x = value; }
         }
 
         public double Y
         {
-            get
-            {
-                return this.y;
-            }
+            get { return this.y; }
 
-            set
-            {
-                this.y = value;
-            }
+            set { this.y = value; }
         }
 
         public Texture2D Pic
         {
             get { return this.pic; }
             set { this.pic = value; }
+        }
+
+        public Texture2D[] Pics
+        {
+            get { return this.pics; }
+            set { this.pics = value; }
         }
 
         public double Life
@@ -154,9 +150,21 @@ namespace RPGGame.Players
                 {
                     value = 1000;
                 }
-                this.life = value;
+
+                if (value <= 0)
+                {
+                    Dead = true;
+                    this.life = 0;
+                }
+                else
+                {
+                    this.life = value;
+                }
+
             }
         }
+
+        public bool Dead { get; set; }
 
         public Ability MyAbility
         {
@@ -213,12 +221,12 @@ namespace RPGGame.Players
 
         #region Moving method
 
-        public void Moving(Texture2D[] pics)
+        public void Moving()
         {
 
             if (IsMovingLeft) //left
             {
-                if (x > 0)//TODO:Moonwalk elapsed -100
+                if (x > 0) //TODO:Moonwalk elapsed -100
                 {
                     x -= speed;
                 }
@@ -233,7 +241,7 @@ namespace RPGGame.Players
                         this.Frame++;
                     }
 
-                    this.Elapsed = 0; //For moon walk use -100 Copyright:DCay
+                    this.Elapsed = -100; //For moon walk use -100 Copyright:DCay
                 }
                 this.Pos = "right";
                 this.pic = null;
@@ -243,7 +251,7 @@ namespace RPGGame.Players
             if (IsMovingRight) //right
             {
 
-                if (x < 3960)
+                if (x < MaxWidth)
                 {
                     x += speed;
                 }
@@ -259,11 +267,12 @@ namespace RPGGame.Players
                         frame++;
                     }
 
-                    elapsed = 0;
+                    elapsed = -100;
                 }
                 this.Pos = "right";
                 this.pic = null;
-                this.pic = pics[3]; IsMovingRight = false;
+                this.pic = pics[3];
+                IsMovingRight = false;
             }
             if (IsMovingUp) //up
             {
@@ -282,7 +291,7 @@ namespace RPGGame.Players
                         frame++;
                     }
 
-                    elapsed = 0;
+                    elapsed = -100;
                 }
                 this.Pos = "up";
                 this.pic = null;
@@ -292,7 +301,7 @@ namespace RPGGame.Players
             }
             if (IsMovingDown) //down
             {
-                if (y < 2000)
+                if (y < MaxHeight)
                 {
                     y += speed;
                 }
@@ -307,7 +316,7 @@ namespace RPGGame.Players
                         frame++;
                     }
 
-                    elapsed = 0;
+                    elapsed = -100;
                 }
                 this.Pos = "down";
                 this.pic = null;
@@ -316,13 +325,20 @@ namespace RPGGame.Players
             }
         }
 
+        public double MaxHeight { get; set; }
+
+        public double MaxWidth { get; set; }
+
         #endregion
 
         #region Action Methods
 
-        public abstract void Attack(Character character);
+        public void Attack(Character character)
+        {
+            character.Life -= this.Damage;
+        }
 
-        public abstract void Defence(Character character);
+        public  void Defence(Character character) { }
 
         #endregion
 

@@ -11,10 +11,11 @@ namespace RPGGame.Enemies
         protected Enemy(double x, double y)
             : base(x, y)
         {
+            
         }
 
-        protected Enemy(double x, double y, Texture2D pic, double life, Ability myAbility, int damage, int speed)
-            : base(x, y, pic, life, myAbility = null, damage, speed)
+        protected Enemy(double x, double y, Texture2D[] pics, double life, Ability myAbility, int damage, int speed)
+            : base(x, y, pics, life, myAbility = null, damage, speed)
         {
             this.Life = 500;
         }

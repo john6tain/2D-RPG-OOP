@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using System;
+using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
 
 /// <summary>
@@ -19,28 +20,21 @@ namespace RPGGame.PlayersAndClasses
         public ChichoMitko(double x, double y)
             : base(x, y)
         {
+            this.Life = 1000;
+            this.Damage = Focus/80;
+            this.Focus = 100;
         }
 
-        public ChichoMitko(double x, double y, Texture2D pic, double life, Ability miracleShot, int damage, int speed, int focus)
-            : base(x, y, pic, life, miracleShot, damage, speed)
+        public ChichoMitko(double x, double y, Texture2D[] pics, double life, Ability miracleShot, int damage, int speed, int focus)
+            : base(x, y, pics, life, miracleShot, damage, speed)
         {
             this.Focus = 100;
         }
         #endregion
-
-        #region Action Methods
-
-        public override void Attack(Character character)
+        public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return String.Format("Life  {0} Focus  ",Life,this.Focus);
         }
-
-        public override void Defence(Character character)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        #endregion
 
     }
 }

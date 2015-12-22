@@ -32,10 +32,10 @@ namespace RPGGame.States
             Initialize();
             string da = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase);
             mplayer = new WMPLib.WindowsMediaPlayer();
-            /*    Directory.GetCurrentDirectory();
+                Directory.GetCurrentDirectory();
                 mplayer.URL = Path.GetDirectoryName(Assembly.GetEntryAssembly().CodeBase) + @"\Content\songs\menu.mp3";
                 mplayer.settings.setMode("loop", false);
-               // mplayer.controls.play();*/
+               mplayer.controls.play();
             stopMenu = false;
         }
 
@@ -52,21 +52,7 @@ namespace RPGGame.States
 
             elapsed += gameTime.ElapsedGameTime.Milliseconds;
             // inputHandler.MouseMovement();
-            if (elapsed >= 200)
-            {
-                if (frame >= 2)
-                {
-                    frame = 1;
-                }
-                else
-                {
-                    frame++;
-                }
 
-                elapsed = 0;
-            }
-
-            sourceRect = new Rectangle(100 * frame, 0, 640, 250);
             #endregion
 
         }
@@ -77,7 +63,7 @@ namespace RPGGame.States
         /// </summary>
         private void Initialize()
         {
-            this.background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/fire");
+            this.background = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/menu");
             this.play = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/play");
             this.options = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/options");
             this.quit = Engine.Engine.ContentLoader.Content.Load<Texture2D>("images/exit");
@@ -86,7 +72,7 @@ namespace RPGGame.States
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), sourceRect, Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
             spriteBatch.Draw(play, new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 200, 150, 70), Color.White);
             spriteBatch.Draw(options, new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) - 100, 150, 70), Color.White);
             spriteBatch.Draw(quit, new Rectangle((GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) - 50, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2), 150, 70), Color.White);

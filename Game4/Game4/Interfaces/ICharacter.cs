@@ -17,7 +17,7 @@ namespace RPGGame.Interfaces
         float Delay { get; }
         string Pos { get; }
         int Damage { get; }
-        int Speed { get; }
+        float Speed { get; }
         int Focus { get; }
         int Energy { get; }
         int Coffeine { get; }

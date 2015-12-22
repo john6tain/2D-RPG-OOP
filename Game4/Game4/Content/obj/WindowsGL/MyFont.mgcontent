@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/MyFont.spritefont</SourceFile>
-  <SourceTime>2015-12-19T16:57:11.4204275+02:00</SourceTime>
-  <DestFile>C:/Users/Alex/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/MyFont.xnb</DestFile>
-  <DestTime>2015-12-21T16:49:54.8966223+02:00</DestTime>
+  <SourceFile>C:/Users/John6tain/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/MyFont.spritefont</SourceFile>
+  <SourceTime>2015-12-22T02:19:16.1818595+02:00</SourceTime>
+  <DestFile>C:/Users/John6tain/Documents/GitHub/2D-RPG-OOP/Game4/Game4/Content/bin/WindowsGL/MyFont.xnb</DestFile>
+  <DestTime>2015-12-22T03:07:50.1429527+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

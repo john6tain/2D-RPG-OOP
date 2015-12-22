@@ -30,9 +30,7 @@ namespace RPGGame.Engine
             this.viewport = viewport;
             if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
             {
-                this.graphics.PreferredBackBufferWidth = 1366;
-                this.graphics.PreferredBackBufferHeight = 768;
-                this.graphics.ToggleFullScreen();
+                this.graphics.IsFullScreen = false;
                 this.graphics.ApplyChanges();
             }
         }

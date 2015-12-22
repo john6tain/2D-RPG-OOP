@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using System;
+using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
 
 /// <summary>
@@ -22,26 +23,20 @@ namespace RPGGame.PlayersAndClasses
         public Alexsination(double x, double y)
             : base(x, y)
         {
+            this.Energy = 100;
+            this.Life = 100 * this.Energy;
+            this.Speed += this.Energy / 100;
+            this.Damage += Energy * 80;
         }
 
-        public Alexsination(double x, double y, Texture2D pic, double life, Ability shadowStep, int damage, int speed, int energy)
-            : base(x, y, pic, life, shadowStep, damage, speed)
+        public Alexsination(double x, double y, Texture2D[] pics, double life, Ability shadowStep, int damage, int speed, int energy)
+            : base(x, y, pics, life, shadowStep, damage, speed)
         {
             this.Energy = 100;
         }
-
-        #endregion
-
-        #region Action Methods
-
-        public override void Attack(Character character)
+        public override string ToString()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Defence(Character character)
-        {
-            throw new System.NotImplementedException();
+            return String.Format("Life : {0} Energy: ", Life, Energy);
         }
         #endregion
 

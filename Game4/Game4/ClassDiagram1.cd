@@ -180,29 +180,22 @@
   <Class Name="RPGGame.PlayersAndClasses.Alexsination" Collapsed="true">
     <Position X="3" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Players\Alexsination.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPGGame.PlayersAndClasses.ChichoMitko" Collapsed="true">
     <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Players\ChichoMitko.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPGGame.PlayersAndClasses.Programmer" Collapsed="true">
     <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Players\Programmer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPGGame.PlayersAndClasses.ScrollingBackground" Collapsed="true">
-    <Position X="30" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>CAQAgAAAAAAAAgAAAgCAAAIAAABAAAAAAAAAQAAAAAA=</HashCode>
-      <FileName>ScrollingBackground.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPGGame.States.Camera" Collapsed="true">

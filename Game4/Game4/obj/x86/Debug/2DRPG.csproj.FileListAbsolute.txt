@@ -84,3 +84,84 @@ C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Conten
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.exe
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.pdb
 C:\Users\Alex\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\right.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.exe
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\RPGGame.pdb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csproj.ResolveComReference.cache
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\RPGGame.exe
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\RPGGame.pdb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\leftGeek.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\pr.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Alexsination\left.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Alexsination\right.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Alexsination\up.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\CoffeinePot.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\DamagePot.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\down.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\EnergyPot.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\exit.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\firstmap.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\HealthPot.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\hero.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\hunter.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 1.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 10.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 11.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 12.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 13.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 14.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 2.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 3.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 4.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 5.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 6.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 7.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 8.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Battle Stance 9.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Center to Front 1.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Center to Front 2.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Center to Front 3.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Center to Front 4.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Center to Front 5.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Front to Center 1.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Front to Center 2.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Front to Center 3.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Front to Center 4.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Front to Center 5.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\pr.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Right to Center 1&2 Prototype.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Right to Center 1.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Right to Center 2.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Right to Center 3.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Right to Center 4.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Johnny RPG Player Models\Right to Center 5.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\left.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\mob_sprites_by_sagantucker-d6pplqh.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\ngbbs4385c97ab38cc.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\options.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\play.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\Speed.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\SpriteContestFrameSheet.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\up.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\V57lz.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\MyFont.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.m4a
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\songs\menu.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\menu.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer\down.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer\left.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer\right.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\programmer\up.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\obj\x86\Debug\2DRPG.csprojResolveAssemblyReference.cache
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\right.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\boss.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\ChichoMitko\attack.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\ChichoMitko\left.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\ChichoMitko\right.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\drakula.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\hamalinL.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\hamalinR.xnb
+C:\Users\John6tain\Documents\GitHub\2D-RPG-OOP\Game4\Game4\bin\WindowsGL\Debug\Content\images\lizer.xnb

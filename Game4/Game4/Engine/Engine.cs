@@ -25,7 +25,7 @@ namespace RPGGame.Engine
             Content.RootDirectory = "Content";
             ContentLoader = new ContentLoader(this.Content);
             input = new InputHandler(graphics);
-            this.graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            this.graphics.PreferredBackBufferWidth =  GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             this.graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             this.graphics.ApplyChanges();
 
@@ -37,7 +37,7 @@ namespace RPGGame.Engine
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
-            this.graphics.IsFullScreen = true;
+            this.graphics.IsFullScreen = true;//make it full
             this.stateManager = new StateManager();
             graphics.ApplyChanges();
 

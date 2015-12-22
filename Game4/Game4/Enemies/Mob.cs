@@ -11,27 +11,16 @@ namespace RPGGame.Enemies
         public Mob(double x, double y)
             : base(x, y)
         {
+            this.Life = 200;
+            this.Damage = 1;
         }
 
-        public Mob(double x, double y, Texture2D pic, double life, Ability myAbility, int damage, int speed)
-            : base(x, y, pic, life, myAbility, damage, speed)
+        public Mob(double x, double y, Texture2D[] pics, double life, Ability myAbility, int damage, int speed)
+            : base(x, y, pics, life, myAbility, damage, speed)
         {
         }
         #endregion
 
-        #region Action Methods
-
-        public override void Attack(Character character)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Defence(Character character)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        #endregion
 
     }
 }

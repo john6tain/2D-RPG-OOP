@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using System;
+using Microsoft.Xna.Framework.Graphics;
 using RPGGame.Players;
 
 /// <summary>
@@ -19,29 +20,23 @@ namespace RPGGame.PlayersAndClasses
         public Programmer(double x, double y)
             : base(x, y)
         {
+            this.Coffeine += 50;
+            this.Life = 100*this.Coffeine;
+            this.Speed += this.Coffeine/25;
+            this.Damage += Coffeine/40;
         }
 
-        public Programmer(double x, double y, Texture2D pic, double life, Ability hackingDoors, int damage, int speed, int coffeine)
-            : base(x, y, pic, life, hackingDoors, damage, speed)
+        public Programmer(double x, double y, Texture2D[] pics, double life, Ability hackingDoors, int damage, int speed,
+            int coffeine)
+            : base(x, y, pics, life, hackingDoors, damage, speed)
         {
-            this.Coffeine = 500;
+            
         }
 
         #endregion
-
-        #region Action Methods
-
-        public override void Attack(Character character)
+        public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return String.Format("Life {0} Coffeine ", Life,this.Coffeine);
         }
-
-        public override void Defence(Character character)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        #endregion
-
     }
 }
